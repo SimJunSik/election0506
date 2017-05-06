@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<title>대통령쇼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<head>
+<meta name="description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="대통령쇼">
+<meta property="og:description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:image" content="http://www.presidentshow.net/static/img/first_page.PNG">
+<meta property="og:url" content="http://www.presidentshow.net">
+<link rel="image_src" href="http://www.presidentshow.net/static/img/first_page.PNG"/>
+<script type="text/javascript">
+    function sharefacebook(url){
+        window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+    }
+
+    function sharetwitter(url){
+        window.open("http://twitter.com/intent/tweet?u=" + url);
+    }
+</script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {
+    font-size:16px;
+}
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+</style>
+ <script type="text/javascript">
+  var total_cnt = [0,0,0,0,0];
+  var cate_num = 7;
+  var sel_cm_list = [
+        ['청년 일자리', ''],['육아', ''],['여성', ''],['노인', ''],['국방', ''],['환경', ''],['기타', ''],
+  ];
+  function cart_open(){
+    var modal = document.getElementById('cart');
+    modal.style.display = "block";
+    document.getElementById('cart_bt').src = "../../static/img/cart_icon2.jpg";
+
+    document.getElementById('sel_cate1').innerHTML = sel_cm_list[0][1];
+    document.getElementById('sel_cate2').innerHTML = sel_cm_list[1][1];
+    document.getElementById('sel_cate3').innerHTML = sel_cm_list[2][1];
+    document.getElementById('sel_cate4').innerHTML = sel_cm_list[3][1];
+    document.getElementById('sel_cate5').innerHTML = sel_cm_list[4][1];
+    document.getElementById('sel_cate6').innerHTML = sel_cm_list[5][1];
+    document.getElementById('sel_cate7').innerHTML = sel_cm_list[6][1];
+  }
+
+  function share_open(){
+    var modal = document.getElementById('share');
+    modal.style.display = "block";
+  }
+
+    function check_cand_num(tmp,t){
+        var idx = String(tmp).indexOf('&');
+        var ttmp = String(tmp).substring(idx+1,String(tmp).length);
+        var b = String(ttmp).indexOf('=');
+        var idx1 = 1+(t-2)*6;
+        var idx2 = 2+(t-2)*6;
+        var bb = String(ttmp).substring(b+idx1,b+idx2);
+        //categ = String(ttmp).substring(b+idx1+2,b+idx2+2);
+        return bb;
+    }
+
+    function check_cand(num,category,ct_num,categ,i_idx){
+        var Imagearray = new Array("../../static/img/moon.jpg","../../static/img/you.jpg","../../static/img/an.jpg",
+            "../../static/img/lee.jpg","../../static/img/ancheol.jpg");
+        var BigImagearray = new Array("../../static/img/big_moon.jpg","../../static/img/big_you.jpg","../../static/img/big_an.jpg", "../../static/img/big_lee.jpg","../../static/img/big_ancheol.jpg","../../static/img/who.png");
+        var noselImagearray = new Array("../../static/img/nosel.png","../../static/img/nosel2.png","../../static/img/nosel3.png");
+        var selImagearray = new Array("../../static/img/hong_sel.jpg","../../static/img/you_sel3.png","../../static/img/ancheol_sel3.png", "../../static/img/sim_sel.jpg","../../static/img/moon_sel3.png");
+        var chImagearray = new Array("../../static/img/moon_ch.png","../../static/img/you_ch.png","../../static/img/an_ch.png", "../../static/img/lee_ch.jpg","../../static/img/ancheol_ch.png");
+        var namearray = ['홍준표', '유승민', '안철수', '심상정', '문재인'];
+        //var imgsource = document.result[ct_num-1];
+        var s = ' ';
+
+        //var comment = document.getElementById("cmt");
+        //comment.style.color = "red";
+        var tmpid = ' ';
+        for(var j=1;j<=5;j++){
+            if((String(num) == String(j)) && String(category) == String(categ)){
+            //imgsource.src = chImagearray[j-1];
+
+            total_cnt[j-1]++;
+            
+            
+            for(var i=0;i<cate_num*5;i++){
+                tmpid = '';
+                if(String(category) == '청년 일자리' && String(cm_list[i][1]) == '청년 일자리' && String(cm_list[i][2]) == String(j) ){
+                    tmpid = tmpid + "cmt" + String(j) + "청년 일자리";     
+                }
+                else if(String(category) == '육아' && String(cm_list[i][1]) == '육아' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "육아";
+                    
+                }
+                else if(String(category) == '여성' && String(cm_list[i][1]) == '여성' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "여성";
+                    
+                }
+                else if(String(category) == '노인' && String(cm_list[i][1]) == '노인' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "노인";
+                    
+                }
+                else if(String(category) == '국방' && String(cm_list[i][1]) == '국방' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "국방";
+                
+                }
+                else if(String(category) == '정치(정치구조)' && String(cm_list[i][1]) == '정치(정치구조)' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "정치(정치구조)";
+                  
+                }
+                else if(String(category) == '환경' && String(cm_list[i][1]) == '환경' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "환경";
+                  
+                }
+                else if(String(category) == '기타' && String(cm_list[i][1]) == '기타' && String(cm_list[i][2]) == String(j)){
+                    tmpid = tmpid + 'cmt' + String(j) + "기타";
+                  
+                }
+                if(String(tmpid).length >= 4){
+                    //alert(tmpid.trim());
+                    document.getElementById(tmpid).style.color = "#d63737";
+                    if(String(category) == '청년 일자리'){
+                        sel_cm_list[0][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '육아'){
+                        sel_cm_list[1][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '여성'){
+                        sel_cm_list[2][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '노인'){
+                        sel_cm_list[3][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '국방'){
+                        sel_cm_list[4][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '환경'){
+                        sel_cm_list[5][1] += cm_list[i][0] + '<br/>';
+                    }
+                    else if(String(category) == '기타'){
+                        sel_cm_list[6][1] += cm_list[i][0] + '<br/>';
+                    }
+                }
+            } 
+             
+               
+            }
+        }
+
+        //alert(i_idx);
+        //alert(last_num);
+        if(i_idx == last_num && cate_num == ct_num){
+        var total_imgsource = [document.total_result[0], document.total_result[1], document.total_result[2], document.total_result[3], document.total_result[4]]; 
+        var max = total_cnt[0];
+        var max_idx = 0;
+        for(i=1;i<5;i++){
+            if(max<total_cnt[i]){
+                max=total_cnt[i];
+                max_idx = i;
+            }
+        }
+
+        document.getElementById("choice").value = max_idx+1;
+
+        var idx_same = [1,1,1];
+        var j = 0;
+        for(i=0;i<5;i++){
+            if(String(i) == String(max_idx)) continue;
+            else if(total_cnt[max_idx] == total_cnt[i]){
+                idx_same[j++] = i+1;
+                document.getElementById("choice").value += (i+1);
+            }
+        }
+        //alert(document.getElementById("choice").value)
+
+        var s=0;
+        for(var i=0;i<5;i++){
+            s += total_cnt[i];
+        }
+
+        for(var i=1;i<=5;i++){
+            if(String(max_idx+1) == String(i)){
+                if(s==0){
+                    document.getElementById("percentage").value = '0%';
+                    document.getElementById("pct_p").value = '아무도 선택하지 않음';
+                    document.getElementById("match").value = '';
+                    $('.a,.b,.d,.e').fadeOut();
+                    return;
+                }
+                if(j==3){
+                    total_imgsource[4].src = selImagearray[i-1];
+                    total_imgsource[2].src = "../../static/img/small_white.jpg";
+                }
+                else{
+                    total_imgsource[2].src = selImagearray[i-1];
+                }
+                
+                var tmp = String(total_cnt[i-1]/s*100);
+                var ss =  String(tmp).substring(0,4);
+                ss += "%";
+                document.getElementById("percentage").value = ss;
+                document.getElementById("pct_p").value = String(namearray[i-1]);
+                document.getElementById("pct_p").style.fontSize = "40px";
+            }
+        }
+
+        if(j==0){$('.a,.b,.d,.e').fadeOut();}
+        if(j==1){
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[0]) == String(k)){
+                total_imgsource[3].src = selImagearray[k-1];
+                total_imgsource[2].src = "../../static/img/small_white.jpg";
+                total_imgsource[1].src = selImagearray[max_idx];
+                $('.a,.c,.e').fadeOut();
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "40px";
+            }
+        }
+        }
+        
+
+        if(j==2){
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[0]) == String(k)){
+                total_imgsource[1].src = selImagearray[k-1];
+                $('.a,.e').fadeOut();
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "30px";
+                }
+            }
+
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[1]) == String(k)){
+                total_imgsource[3].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "30px";
+                }
+            }
+        }
+
+        if(j==3){
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[0]) == String(k)){
+                total_imgsource[0].src = selImagearray[k-1];
+                $('.c').fadeOut();
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "25px";
+                }
+            }
+
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[1]) == String(k)){
+                total_imgsource[1].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "25px";
+                }
+            }
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[2]) == String(k)){
+                total_imgsource[3].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "25px";
+                }
+            }
+
+            total_imgsource[2].src = "../../static/img/small_white.jpg";
+        }
+
+        if(j==4){
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[0]) == String(k)){
+                total_imgsource[0].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "20px";
+                }
+            }
+
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[1]) == String(k)){
+                total_imgsource[1].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "20px";
+                }
+            }
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[2]) == String(k)){
+                total_imgsource[3].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "20px";
+                }
+            }
+
+            for(var k=1;k<=5;k++){
+                if(String(idx_same[3]) == String(k)){
+                total_imgsource[4].src = selImagearray[k-1];
+                document.getElementById("pct_p").value += ',' + String(namearray[k-1]);
+                document.getElementById("pct_p").style.fontSize = "20px";
+                }
+            }
+        }
+    }
+}
+
+    var cm_list = [
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        //['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','','']
+        ];
+
+    var categ;
+    var last_num;
+
+    function check_categ(){
+        if(categ == "ec1"){
+            categ = "청년 일자리";
+        }
+        else if(categ == "se1"){
+            categ = "육아";
+        }
+        else if(categ == "se2"){
+            categ = "여성";
+        }
+        else if(categ == "wel"){
+            categ = "노인";
+        }
+        else if(categ == "dip"){
+            categ = "국방";
+        }
+        else if(categ == "pol"){
+            categ = "정치(정치구조)";
+        }
+        else if(categ == "ct6"){
+            categ = "환경";
+        }
+        else if(categ == "ct7"){
+            categ = "기타";
+        }
+    }
+
+    function Check_form(n) {
+        for(var i=0;i<5;i++){
+            total_cnt[i]=0;
+        }
+        var cms = '{{ cmts|escapejs }}'
+        //alert(cms);
+        var tmp = cms;
+        var j=0;
+
+        for(var i=1;i<=cate_num*10;i++){
+            var cm_idx = tmp.indexOf('commitment');
+            tmp = tmp.substring(cm_idx+14,cms.length);
+            //alert(tmp);
+            if(i%2==0){
+                //alert(tmp);
+                var tm_idx = tmp.indexOf('"');
+                var ttmp = tmp.substring(0,tm_idx);
+                cm_list[j++][0] += ttmp;
+            }
+        }
+
+        j=0;
+        tmp = cms;
+        for(var i=1;i<=cate_num*5;i++){
+            var cm_idx = tmp.indexOf('category');
+            tmp = tmp.substring(cm_idx+12,cms.length);
+                var tm_idx = tmp.indexOf('"');
+                //alert(tmp);
+                var ttmp = tmp.substring(0,tm_idx);
+                //alert(ttmp);
+                cm_list[j++][1] += ttmp;
+        }
+        
+        j=0;
+        tmp = cms;
+        for(var i=1;i<=cate_num*5;i++){
+            var cm_idx = tmp.indexOf('party_number');
+            tmp = tmp.substring(cm_idx+15,cms.length);
+                var ttmp = tmp.substring(0,1);
+                //alert(ttmp);
+                cm_list[j++][2] += ttmp;
+        }
+        //alert(cm_list);
+        
+
+        var tmp = window.location;
+
+        var idx = String(tmp).indexOf('?');
+
+        var ttmp = String(tmp).substring(idx+1,String(tmp).length);
+
+        var b1 = String(ttmp).indexOf('=');
+
+        var bb1 = String(ttmp).substring(b1+1,b1+2);
+        var categ_idx = 0;
+        last_num = parseInt(ttmp.length/5);
+        for(var i=1;i<=parseInt(ttmp.length/5);i++){
+        categ = String(ttmp).substring(categ_idx,b1);
+        check_categ();
+        check_cand(bb1,'청년 일자리',1,categ,i);
+        check_cand(bb1,'육아',2,categ,i);
+        check_cand(bb1,'여성',3,categ,i);
+        check_cand(bb1,'노인',4,categ,i);
+        check_cand(bb1,'국방',5,categ,i);
+        check_cand(bb1,'환경',6,categ,i);
+        check_cand(bb1,'기타',7,categ,i);
+        //check_cand(bb1,'정치(정치구조)',6,categ,i);
+
+        b1 += 6;
+        categ_idx += 6;
+        bb1 = String(ttmp).substring(b1+1,b1+2);
+        }
+        
+
+
+        $('.col-md-4').hide().fadeIn(n);
+        $('#choice').fadeOut();
+        $('#p00').fadeIn();
+        $('#p11').fadeOut();
+        $('#p22').fadeOut();
+        $('#p33').fadeOut();
+        $('#p44').fadeOut();
+        $('#p55').fadeOut();
+
+        $('.r0').fadeIn();
+        $('.r1').fadeOut();
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        //var modal = document.getElementById('myModal');
+        //modal.style.display = "block";
+
+        $('#guide1').fadeIn();
+        $('#guide2').fadeOut();
+        $('#guide3').fadeOut();
+    }
+    function table_change1(){
+        $('#p00').fadeOut();
+        $('#p11').hide().fadeIn();
+        $('#p22').fadeOut();
+        $('#p33').fadeOut();
+        $('#p44').fadeOut();
+        $('#p55').fadeOut();
+    }
+    function table_change2(){
+        $('#p00').fadeOut();
+        $('#p22').hide().fadeIn();
+        $('#p11').fadeOut();
+        $('#p33').fadeOut();
+        $('#p44').fadeOut();
+        $('#p55').fadeOut();
+    }
+    function table_change3(){
+        $('#p00').fadeOut();
+        $('#p33').hide().fadeIn();
+        $('#p22').fadeOut();
+        $('#p11').fadeOut();
+        $('#p44').fadeOut();
+        $('#p55').fadeOut();
+    }
+    function table_change4(){
+        $('#p00').fadeOut();
+        $('#p44').hide().fadeIn();
+        $('#p22').fadeOut();
+        $('#p33').fadeOut();
+        $('#p11').fadeOut();
+        $('#p55').fadeOut();
+    }
+    function table_change5(){
+        $('#p00').fadeOut();
+        $('#p55').hide().fadeIn();
+        $('#p22').fadeOut();
+        $('#p33').fadeOut();
+        $('#p44').fadeOut();
+        $('#p11').fadeOut();
+    }
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['홍준표', total_cnt[0]],
+          ['유승민', total_cnt[1]],
+          ['안철수', total_cnt[2]],
+          ['심상정', total_cnt[3]],
+          ['문재인', total_cnt[4]]
+        ]);
+
+        var options = {
+          title: '선택 비율',
+          is3D: true,
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+    function r_af0(){
+        window.scrollTo(0,0);
+        $('.r0').fadeOut();
+        $('.r1').fadeIn();
+
+        $('#p00').fadeIn();
+        $('#p11').fadeOut();
+        $('#p22').fadeOut();
+        $('#p33').fadeOut();
+        $('#p44').fadeOut();
+        $('#p55').fadeOut();
+    }
+
+    function r_bf1(){
+        window.scrollTo(0,0);
+        $('.r0').fadeIn();
+        $('.r1').fadeOut();
+    }
+  </script>
+
+<style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    .col-md-4{ font-size: 18px; font-weight: 900;}
+    h3{
+        font-size: 26px;
+        font-weight: 2000;
+        font-family: 'Nanum Gothic', serif;
+    }
+    h2{
+        font-family: 'Hanna'; 
+        font-size: 26px;
+    }
+    h5{
+        font-family: 'Hanna'; 
+        font-size: 20px;
+    }
+    h6{
+        font-family: 'Hanna'; 
+        font-size: 50px;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        color: black;
+    }
+    .panel-body{
+        font-family: 'Hanna';
+    }
+    .tmp{
+        /*background-color: #EAEAEA;*/
+        
+    }
+    .tmp2{
+        /*background-color: white;*/  
+    }
+    /*.row{
+        width: 1100px;
+    }
+    .col-md-12{
+        width: 1100px;
+    }*/
+</style>
+<style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    h4 {font-family: 'Hanna'; font-size: 40px;}
+</style>
+<script>
+
+  function submit_form() {
+
+    document.frm.target = 'ifrm';
+
+    document.frm.action = 'save_data.php';
+
+    document.frm.submit();
+
+  }
+
+</script>
+<style type="text/css">
+    #accs{
+        text-align: center;
+    }
+    @media (min-width:501px) {
+        #pct_p{
+            font-size: 40px;
+        }
+        .modal{
+            padding-top: 50px;
+        }
+        .modal-content{
+            width: 30%;
+        }
+        .g_img{
+            width: 400px;
+            height: 600px;
+        }
+        .kaka{
+            width:0px;
+            height:0px;
+            margin-left: 0px;
+        }
+        #piechart{
+            position: relative;
+            width: 800px; 
+            height: 600px; 
+            margin-left: 40px;
+            margin-bottom: 0px;
+        }
+        .abc{
+             width: 900px; 
+             margin-left: 400px;
+        }
+        #forcate{
+            margin-left: 200px;
+        }
+        .cc{
+            margin-left: 380px;
+        }
+        #total_res{
+            margin-left: 0px;
+
+        }
+        .row{
+            margin-left: 100px;
+        }
+        h2{
+            margin-left: 70px;
+        }
+        .a, .b, .c, .d, .e{
+            width: 30%;
+        }
+        #can_dt{
+            text-align: center;
+        }
+        table{
+            margin-left: 16%;
+        }
+        #alls{
+            margin-left: 5%;
+            font-size: 50px;
+        }
+        #all{
+            margin-left: 28%;
+        }
+        #accordion{
+            text-align: center;
+            margin-left: 25%;
+            width: 65%;
+        }
+        body{
+            overflow-x:scroll;
+        }
+        #qwe{
+            color:white;
+        }
+        }
+    @media(max-width:500px) {
+        #qwe{
+            font-size: 8px; text-align: right; color:#5cb85c;
+        }
+        .modal{
+            padding-top: 25px;
+        }
+        .modal-content{
+            width: 80%;
+        }
+        .g_img{
+            width: 100%;
+            height: 400px;
+        }
+        .kaka{
+            width:45px;
+            height:45px;
+            margin-left: 0px;
+        }
+        .text-center{
+            margin-top: 100px;
+        }
+        #piechart{ 
+            width: 15%; 
+            height:300px;
+            margin-left: -20px;
+            margin-bottom:0px;
+        }
+        #total_res{
+            margin-top: 20px;
+            margin-left: 0px;
+            font-size: 30px;
+        }
+        #forcate{
+            margin-left: 5%;
+            font-size: 50px;
+            
+        }
+        .a, .b, .d, .e{
+            width: 30%;
+
+        }
+        .c{
+            margin-left: 0px;
+            width:30%;
+            
+        }
+        #percentage{
+            margin-left: 0px;
+        }
+        .cate_img{
+            margin-left: 40px;
+        }
+        #cc{
+            margin-left: 20px;
+        }
+        #match{
+            margin-left: 0px;
+        }
+        .your{
+            margin-left: 40px;
+        }
+        #all{
+            
+        }
+        #alls{
+            font-size: 24px;
+        }
+        h6{
+            font-size: 250%
+        }
+        #can_dt{
+            text-align: center;
+
+            font-size: 10px;
+        }
+        #immm{
+            width:40%;
+        }
+        h3{
+            font-size: 20px;
+        }
+        table{          
+            margin-top: -50px;
+        }
+        #rr{
+            margin-top: 0px;
+        }
+        #accordion{
+            text-align: center;
+        }
+        body{
+            overflow-x:scroll;
+        }
+
+    }
+</style>
+<style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+ .button {
+    display : block;
+    padding : 0.9em 1.0em;
+    border-radius : 1.6em;
+    color : #fff;
+    font-size : 18px;
+    font-family : 'Lato', sans-serif;
+    font-weight : 700;
+    text-align : center;
+    text-decoration : none;
+    background-color : #FF007F;
+    box-shadow : 0 5px 20px rgba(153, 56, 0, 0.5);
+    width: 180px;
+}
+</style>
+
+
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    /*padding-top: 50px;*/ /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    /*width: 40%;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+</style>
+
+</head>
+<body bgproperties="fixed" oncontextmenu="return false" ondragstart="return false" oneselectstart="return false" style="background-color: white" style="width: 1400px" onload="Check_form()">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97823531-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Sidenav/menu -->
+<nav class="w3-sidenav w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold; background-color: #467F88;" id="mySidenav" ><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-padding-xlarge w3-black w3-hide-large w3-display-topleft w3-hover-white" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container" >
+    <p>&nbsp;</p>
+    <h3 class="w3-padding-50"><b>계산대 <img src = "../../static/img/won2.png" width="25px" height="25px"><br></b></h3>
+  </div>
+  <a href="#total_res" onclick="w3_close()" class="w3-padding w3-hover-white" ><span style="color:#ffffff; ">#당신의 정책 후보</span></a> 
+  <a href="#all" onclick="w3_close()" class="w3-padding w3-hover-white"><span style="color:#ffffff; ">#후보별 공약</span></a>
+  <br>
+
+  <hr>
+
+  <a href="../../" onclick="w3_close()" class="w3-padding w3-hover-white"><span style="color:#ffffff; ">#다시하기</span><!--<img src = "../../static/img/flower3.png">--></a>
+
+  <a href="../index3" onclick="w3_close()" class="w3-padding w3-hover-white"><span style="color:#ffffff; ">#About</span><!--<img src = "../../static/img/flower3.png">--></a></h3>
+
+  <hr>
+  <div class="w3-container" >
+  <h3 class="w3-padding-50"><b>공유하기 <img src = ""><br></b></h3>
+  </div>
+  <a href="javascript:sharefacebook('http://www.presidentshow.net')"
+  class="w3-padding w3-hover-white">
+      <img src="../../static/img/face_icon.png" style="width: 33px; height: 33px;">&nbsp;&nbsp;<span style="color:#ffffff;">페이스북</span>
+  </a>
+
+  <a href="javascript:sharetwitter('http://www.presidentshow.net')"
+  class="w3-padding w3-hover-white">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px;">&nbsp;&nbsp;<span style="color:#ffffff;">트위터
+      </span>
+  </a>
+
+  <!--
+  <a id="kakao-link-btn" href="javascript:;">
+    <img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
+  </a>
+  -->
+
+</nav>
+
+<!-- Top menu on small screens -->
+<style type="text/css">
+    .icon{
+      font-family: 'Hanna'; 
+      font-size: 20px;
+      font-weight: 900;
+    }
+</style>
+<header class="w3-container w3-bottom w3-hide-large w3-xlarge" style="background-color: #dedede;">
+<!--
+  <a href="javascript:void(0)" class="w3-btn w3-brown w3-border w3-border-brown w3-margin-right" onclick="w3_open()"><b style="color: white; border-radius: 1.6em;">더보기</b></a>
+  -->
+
+<!--
+ <a class="button" href="javascript:void(0)" onclick="w3_open()">Click Here </a>
+-->
+ 
+ <!--
+  <span style="font-size: 15px;"><b>공유하기</b></span>
+  <a href="javascript:sharefacebook('http://ec2-13-124-1-20.ap-northeast-2.compute.amazonaws.com:8000/')"
+  class="w3-hover-white">
+      <img src="../../static/img/facebookimg.png" style="width: 33px; height: 33px; margin-left: -0px;">
+  </a>
+
+  <a href="javascript:sharetwitter('http://ec2-13-124-1-20.ap-northeast-2.compute.amazonaws.com:8000/')"
+  class="w3-hover-white">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px; margin-left: 0px;">
+  </a>
+  -->
+    <table style="width: 100%; background-color: #dedede; margin-top: 0px; margin-left: 0px;">
+        <tr>
+            <td>
+            <a href="../" onclick="w3_close()" class="w3-padding" style="font-size: 10px; text-align: center; margin-top: -20px;"><img src="../../static/img/home_icon2.jpg" width=29px height=29px style="margin-bottom: 2px;"></a>
+            </td>
+            <td>
+                <a onclick="cart_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/cart_icon2.jpg" width=29px height=29px id="cart_bt" style=""></a>
+            </td>
+            <td>
+                <a href="../index3" class="w3-padding" style=""><img src="../../static/img/about_icon2.jpg" width=29px height=29px style=""></a>
+            </td>
+            <td>
+                <a onclick="share_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/share_icon2.jpg" width=29px height=29px style=""></a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+
+<!-- Overlay effect when opening sidenav on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="abc">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B></B></td>
+        </tr>
+        </thead>
+        <tbody style="letter-spacing: 10px;" >
+            <form action="../polls/{{poll.id}}/" method="post">
+            <h6 class="text-center r0" id="total_res"> 당신의 정책 후보 </h6>
+            <hr class="r0">
+            <div class="cb r0" style="text-align: center;">
+            <img src="../../static/img/white.jpg"  class= "a" name=total_result  >
+            <img src="../../static/img/white.jpg"  class= "b" name=total_result  >
+            <img src="../../static/img/nosel2.png" class= "c" name=total_result>
+            <img src="../../static/img/white.jpg"  class= "d" name=total_result  >
+            <img src="../../static/img/white.jpg"  class= "e" name=total_result  >
+            </div>
+
+                    <div class="col-md-12 r0">
+                        <h2 class="text-center" id="rr">당신의 정책성향은
+                        <input type="button" class="btn btn-danger btn-lg" name="percentage" id="percentage" value="??%"
+                        style="background-color: white; border: 0px; color: #000000; font-size: 40px; font-weight: 900" disabled>      
+                        <input type="button" class="btn btn-danger btn-lg" name="pct_p" id="pct_p" value="??" style="background-color: white; border: 0px; color: black; font-weight: 900" disabled>
+                        <input type="button" class="btn btn-danger btn-lg" name="match" id="match" value="후보와 어울립니다." style="background-color: white; border: 0px; color: black; font-size: 26px; font-weight: 900" disabled>
+                        <!--
+                        <br><h6 id="qwe">공약을 더보려면 ↓&nbsp;&nbsp;</h6>
+                        -->
+                        <br class="r0"><br class="r0">
+                        <a id="af{{ctgr.idx}}" class="r0"></a>
+                <button type="button" class="w3-btn  w3-xlarge w3-margin-top r0" onclick="r_af0();" style="float: right; background-color: white; color:#5D5D5D;">Next ></button>
+                <br class="r0"><br class="r0">
+                        <label>  
+                            <div class="col-md-4 r0" id="piechart"></div>
+                                         
+                        </label>
+                        </h2>
+                        <!--
+                        <form action="../polls/{{poll.id}}/" method="post" target="_blank" id="cc">
+                        {% csrf_token %}
+                        &nbsp;&nbsp;&nbsp;
+                            <button name="choice" id="choice" value=1 class="w3-btn w3-padding-16 w3-xxlarge w3-margin-top center-block" style="visibility: hidden; width:0px; height: 0px;">
+                                결과제출하기
+                            </button>
+                        </form>
+                        -->
+                    </div>
+                
+
+                
+                <span  id="forcate" class="r0"></span>
+                <!--
+                <h6 class="text-center">
+                
+                <span style="font-size: 18px;">친구에게 추천하려면&nbsp;&nbsp; </span>
+  <a href="javascript:sharefacebook('http://ec2-13-124-1-20.ap-northeast-2.compute.amazonaws.com:8000/')"
+  class="w3-hover-white">
+      <img src="../../static/img/face.jpg" style="width: 45px; height: 45px; margin-left: -0px;">
+  </a>
+
+  <a href="javascript:sharetwitter('http://ec2-13-124-1-20.ap-northeast-2.compute.amazonaws.com:8000/')"
+  class="w3-hover-white">
+      <img src="../../static/img/twi.jpg" style="width: 45px; height: 45px; margin-left: 0px;">
+  </a> 
+  <a id="kakao-link-btn" href="javascript:;" class="w3-hover-white">
+      <img src="../../static/img/kaka.jpg" class="kaka">
+  </a> 
+  <span style="color:red; font-size: 15px;text-align: center;"><br> * 결과는 공유되지 않습니다 *</span>
+                <br><br><br>
+                </h6> 
+                -->
+                
+                <!--
+                <div class="col-md-4">
+                
+                <style>
+                    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+                    
+                </style>
+                    
+                    <table style="margin-top: 30px;">
+                    <tr>
+                        
+                        <td>
+                            <span class="text-center">경제<br>
+                            </span>
+                            
+                        </td>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td>
+                            <span class="text-center"><br>
+                            </span>
+                            
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">육아<br>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">여성<br>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">노인<br>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">국방<br>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">환경<br>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../static/img/nosel2.png" name=result border="2" class="center-block" id="immm"></td>
+                        <td><span class="text-center">기타<br>
+                        </span></td>
+                    </tr>
+                    
+                    </table>
+                    
+                    
+                </div>
+                -->
+
+                
+                
+                <h6><div class="text-center r1" style="margin-top: -0px;">&nbsp;후보별 공약&nbsp;<hr id="hr_title"></div></h6>
+                <a id="af{{ctgr.idx}}"><button type="button" class="w3-btn w3-xlarge w3-margin-top r1" onclick="r_bf1();" style="background-color: white;color:#5D5D5D; margin-bottom: 80px;">< Prev</button></a>
+
+
+                <!--
+                <a id="af{{ctgr.idx}}" href="../index4"><button type="button" class="w3-btn w3-xlarge w3-margin-top r1" onclick="" style="float: right; background-color:white;color:#5D5D5D; font-weight: 100">Skip ></button></a>
+                -->
+                
+                <form action="../polls/1/" method="post" target="_blank" id="cc">
+                        {% csrf_token %}
+                        &nbsp;&nbsp;&nbsp;
+                            <button name="choice" id="choice" value=1 class="w3-btn w3-xlarge w3-margin-top r1" style="float: right; background-color:white;color:#5D5D5D; font-weight: 100">
+                                Skip >
+                            </button>
+                </form>
+                
+                <style type="text/css">
+                    /*#tdtd{
+                        padding : 40px;
+                    }*/
+                    
+                    
+                    @media(max-width:500px){
+                        #can_ct{
+                        margin-left: 6%;
+                        }
+                        td{
+                            padding : 0px;
+                        }
+                        #tdtd{
+                        padding : 0px;
+                        text-align: center;
+                        }
+                        #can_nm{
+                       text-align: center;
+                        }
+                        .gog{
+                            font-size: 16px;
+                            letter-spacing: 8%;
+                        }
+                        .gog2{
+                            font-size: 20px
+                        }
+                        td{
+                            padding:0px;
+                        }
+                        #hr_title{
+                            margin-bottom: 0px;
+                        }
+                        .tb_t{
+                        margin-left: 9px;
+                        }
+                        .cm_img{
+                            width: 60px;
+                            height: 70px;
+                        }
+
+                    }
+                    @media(min-width:501px){
+                        #tdtd{
+                        padding : 0px;
+                        width:18%;
+                        text-align: center;
+                        }
+                           #can_nm{
+                           text-align: center;
+                           font-size:26px;
+                        } 
+                        .gog{
+                            font-size: 25px;
+                        }
+                        .gog2{
+                            font-size: 30px
+                        }
+                        td{
+                            padding:0px;
+                        }
+                        .tb_t{
+                            margin-left: 40px;
+                        }
+
+                    }
+                    
+
+                </style>
+                             
+                <div class="r1" id="can_ct" style="">
+                <table id="tb" style="background-color: #D5D5D5; border-spacing: 0px;  padding-top: -50px; margin-left: -0px;" class="r1">
+                <tr>
+                <td colspan="11">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="tdtd">
+                <img src="../../static/img/hong.jpg" class="center-block img-circle img-responsive cm_img" id="p1" onclick="table_change1()" style="text-align:middle; ">
+                <label id="can_dt">
+                    <span id="can_nm" style="text-align: center;">홍준표</span>
+                </label>
+                </td>
+
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="tdtd">
+                <img src="../../static/img/you.jpg" class="center-block img-circle img-responsive cm_img" id="p2" onclick="table_change2()">
+                <label id="can_dt" style="text-align: center;">
+                    <span style="text-align: center;" id="can_nm">유승민</span>
+                </label>
+
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="tdtd">
+                <img src="../../static/img/ancheol.jpg" class="center-block img-circle img-responsive cm_img" id="p3" onclick="table_change3()">
+                <label id="can_dt" style="text-align: center;">
+                    <span style="text-align: center;" id="can_nm">안철수</span>
+                                        
+                </label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="tdtd">
+                <img src="../../static/img/sim.jpg" class="center-block img-circle img-responsive cm_img" id="p4" onclick="table_change4()">
+                <label id="can_dt" style="text-align: center;">
+                     <span style="text-align: center;" id="can_nm">심상정</span>                       
+                </label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="tdtd">
+                <img src="../../static/img/moon.jpg" class="center-block img-circle img-responsive cm_img" id="p5" onclick="table_change5()">
+                <label id="can_dt" >
+                 <span style="text-align: center;" id="can_nm">문재인</span>
+                </label>
+                </td>
+
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                <td colspan="11">
+                &nbsp;<br>&nbsp;
+                </td>
+                </tr>
+                <tr>
+                <td colspan="11">
+               <div id="p00" class="r1">
+                    
+                    <p style="font-size: 26px; text-align: center;">&nbsp;<img src="../../static/img/vote_icon.png" width="26px" height="26px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">사진을 누르면 <br>후보별 공약이&nbsp;보입니다 </p>
+                    <p style="font-size: 26px;text-align: center;">&nbsp;<img src="../../static/img/vote_icon.png" width="26px" height="26px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">내가 선택한 <br>공약은 붉은색으로 <br>표시됩니다<br>&nbsp;</p>
+                    <br><br><br>
+                </div>
+                <div id="p11" style="text-align: center;" class="r1">
+                <label class="center-block " style="text-align: center;">
+                <span style="float: right; font-size: 10px; margin-right: 20px;"><img src="../../static/img/vote_icon.png" width="10px" height="10px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">공약을 클릭하면 출처로 이동합니다</span>
+                <br>
+                <span style="font-size: 40px; text-align:center;"> 홍준표<br/></span><br>
+                                {% for commitment in commitments %}
+                                    {% if commitment.party_number == 1 %}
+                                        <li>
+                                        
+                                            <span class="gog2">{{commitment.category}} : </span><br>
+                                            <label>
+                                            <a target="_blank" href = {{commitment.ref}}>
+                                            <span id="cmt{{commitment.party_number}}{{commitment.category}}" style="color: black" name="" class="gog">
+                                            {{commitment.commitment}}<br>
+                                            </span>
+                                            
+                                            </a>
+                                            <br>
+                                            </span>
+                                            </label>
+                                        
+                                        </li>
+                                    {% endif %}
+
+                                {% endfor %}<br/><br/>
+                                </label>
+                </div>
+                <div id="p22"  style="text-align: center;" class="r1">
+                <label class="center-block ">
+                <span style="float: right; font-size: 10px; margin-right: 20px;"><img src="../../static/img/vote_icon.png" width="10px" height="10px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">공약을 클릭하면 출처로 이동합니다</span>
+                <br>
+
+                    <span style="font-size: 40px; text-align:center;"> 유승민<br/></span><br>
+                                {% for commitment in commitments %}
+                                    {% if commitment.party_number == 2 %}
+                                        <li>
+                                        
+                                            <span class="gog2">{{commitment.category}} : </span><br>
+                                            <label>
+                                            <a target="_blank" href = {{commitment.ref}}>
+                                            <span id="cmt{{commitment.party_number}}{{commitment.category}}" style="color: black" name="" class="gog">
+                                            {{commitment.commitment}}<br>
+                                            </span>
+                                            
+                                            </a>
+                                            <br>
+                                            </span>
+                                            </label>
+                                        
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}<br/><br/><br/>
+                                </label>
+                </div>
+                <div id="p33"  style="text-align: center;" class="r1">
+                <label class="center-block ">
+                <span style="float: right; font-size: 10px; margin-right: 20px;"><img src="../../static/img/vote_icon.png" width="10px" height="10px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">공약을 클릭하면 출처로 이동합니다</span>
+                <br>
+
+                    <span style="font-size: 40px"> 안철수<br/> </span><br>
+                                {% for commitment in commitments %}
+                                    {% if commitment.party_number == 3 %}
+                                        <li>
+                                        
+                                            <span class="gog2">{{commitment.category}} : </span><br>
+                                            <label>
+                                            <a target="_blank" href = {{commitment.ref}}>
+                                            <span id="cmt{{commitment.party_number}}{{commitment.category}}" style="color: black" name="" class="gog">
+                                            {{commitment.commitment}}<br>
+                                            </span>
+                                            
+                                            </a>
+                                            <br>
+                                            </span>
+                                            </label>
+                                        
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}<br/><br/>
+                                </label>
+                </div>
+                <div id="p44"  style="text-align: center;" class="r1">
+                <label class="center-block ">
+                <span style="float: right; font-size: 10px; margin-right: 20px;"><img src="../../static/img/vote_icon.png" width="10px" height="10px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">공약을 클릭하면 출처로 이동합니다</span>
+                <br>
+
+                    <span style="font-size: 40px"> 심상정<br/> </span><br>
+                                {% for commitment in commitments %}
+                                    {% if commitment.party_number == 4 %}
+                                        <li>
+                                        
+                                            <span class="gog2">{{commitment.category}} : </span><br>
+                                            <label>
+                                            <a target="_blank" href = {{commitment.ref}}>
+                                            <span id="cmt{{commitment.party_number}}{{commitment.category}}" style="color: black" name="" class="gog">
+                                            {{commitment.commitment}}<br>
+                                            </span>
+                                            
+                                            </a>
+                                            <br>
+                                            </span>
+                                            </label>
+                                        
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}<br/><br/>
+                                </label>
+                </div>
+                <div id="p55"  style="text-align: center;" class="r1">
+                <label class="center-block ">
+                <span style="float: right; font-size: 10px; margin-right: 20px;"><img src="../../static/img/vote_icon.png" width="10px" height="10px" style="vertical-align: middle; margin-bottom : 2px; margin-right: 4px;">공약을 클릭하면 출처로 이동합니다</span>
+                <br>
+
+                    <span style="font-size: 40px"> 문재인<br/> </span><br>
+                                {% for commitment in commitments %}
+                                    {% if commitment.party_number == 5 %}
+                                        <li>
+                                        
+                                            <span class="gog2">{{commitment.category}} : </span><br>
+                                            <label>
+                                            <a target="_blank" href = {{commitment.ref}}>
+                                            <span id="cmt{{commitment.party_number}}{{commitment.category}}" style="color: black" name="" class="gog">
+                                            {{commitment.commitment}}<br>
+                                            </span>
+
+                                            </a>
+                                            <br>
+                                            </span>
+                                            </label>
+                                        
+                                        </li>
+                                    {% endif %}
+                                    
+                                {% endfor %}<br/><br/>
+                                </label>
+                </div>
+                </td>
+                <tr>
+
+                <td colspan="11">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </td>
+                </tr>
+                
+                </table>
+
+               
+                 
+            </form>
+        <tbody>
+    </table>
+
+<!-- End page content -->
+</div>
+<!-- Trigger/Open The Modal-->
+<button id="myBtn" style="visibility: hidden;">Open Modal</button>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px; "><br><b>Guide line</b></span>
+    </div>
+    <div class="modal-body">
+      
+        <div id="guide1" style="text-align: center;">
+            <img src="../../static/img/3-1.png" class="g_img" style=""><br/>
+            <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-large w3-margin-top" onclick="m_af0();" style="float: right; background-color:#5cb85c; ">Next ></button>
+        </div>
+
+        <div id="guide2" style="text-align: center;">
+            <img src="../../static/img/3-2.png" class="g_img" style=""><br/>
+            <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-large w3-margin-top" onclick="m_bf1();" style="float: left; background-color:#5cb85c;">< Prev</button>
+            <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-large w3-margin-top" onclick="m_af1();" style="float: right; background-color:#5cb85c;">Next ></button>
+        </div>
+
+        <div id="guide3" style="text-align: center;">
+            <img src="../../static/img/3-3.png" class="g_img" style=""><br/>
+            <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-large w3-margin-top" onclick="m_bf2();" style="float: left; background-color:#5cb85c;">< Prev</button>
+            <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-large w3-margin-top" onclick="m_af2();" style="float: right; background-color:#5cb85c;">Next ></button>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+
+
+<div id="cart" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Cart</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+    {% for ctgr in categories%}
+      {% if ctgr.ctname == 'ec1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="청년 일자리"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="육아"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se2' %}
+      <input type="button" class="btn btn-danger btn-lg" value="여성"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'wel' %}
+      <input type="button" class="btn btn-danger btn-lg" value="노인"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'dip' %}
+      <input type="button" class="btn btn-danger btn-lg" value="국방"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct6' %}
+      <input type="button" class="btn btn-danger btn-lg" value="환경"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct7' %}
+      <input type="button" class="btn btn-danger btn-lg" value="기타"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      <br/>      
+      <div id="sel_cate{{ctgr.idx}}" style="color: black; font-size: 10px; font-weight: 900">
+        선택안함
+      </div>
+      <br/>
+    {% endfor %}
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="share" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Page Share</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <a href="javascript:sharefacebook('http://www.presidentshow.net')">
+      <img src="../../static/img/face_icon.png" style="width: 33px; height: 33px;"><span style="color:#000000;"></span>
+  </a>
+  <br><br>
+
+  <a href="javascript:sharetwitter('http://www.presidentshow.net')">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;">
+      </span>
+  </a>
+  <br><br>
+
+  <a id="kakao-link-btn" href="javascript:;">
+<img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" style="width: 33px; height: 33px;"/>
+</a>
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('b293bb45b587680eb54be656cd55b62b');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createCustomButton({
+      container: '#kakao-link-btn',
+      templateId: 3262,
+      templateArgs: {
+        '${title}': '대통령쇼',
+        '${description}': '내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.'
+      }
+    });
+  //]]>
+</script>
+  <br><br>
+    </div>
+    <div class="modal-footer">
+      결과는 공유되지 않습니다.    
+    </div>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod2 = document.getElementById('share');
+
+  // Get the button that opens the modal
+  var bt2 = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa2 = document.getElementsByClassName("close")[2];
+
+  // When the user clicks the button, open the modal 
+  bt2.onclick = function() {
+      mod2.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa2.onclick = function() {
+      mod2.style.display = "none";
+  }
+</script>
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod = document.getElementById('cart');
+
+  // Get the button that opens the modal
+  var bt = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa = document.getElementsByClassName("close")[1];
+
+  // When the user clicks the button, open the modal 
+  bt.onclick = function() {
+      mod.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa.onclick = function() {
+      mod.style.display = "none";
+      document.getElementById("cart_bt").src = "../../static/img/cart_icon2.jpg";
+  }
+</script>
+
+
+
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function m_af0(){
+    $('#guide1').fadeOut();
+    $('#guide2').fadeIn();
+    $('#guide3').fadeOut();
+
+  }
+
+  function m_af1(){
+    $('#guide1').fadeOut();
+    $('#guide2').fadeOut();
+    $('#guide3').fadeIn();
+  }
+
+  function m_bf1(){
+    $('#guide1').fadeIn();
+    $('#guide2').fadeOut();
+    $('#guide3').fadeOut();
+  }
+
+  function m_bf2(){
+    $('#guide1').fadeOut();
+    $('#guide2').fadeIn();
+    $('#guide3').fadeOut();
+  }
+</script>
+
+<script>
+// Script to open and close sidenav
+function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+<script type="text/javascript">
+(function(w, d, a){
+    w.__beusablerumclient__ = {
+        load : function(src){
+            var b = d.createElement("script");
+            b.src = src; b.async=true; b.type = "text/javascript";
+            d.getElementsByTagName("head")[0].appendChild(b);
+        }
+    };w.__beusablerumclient__.load(a);
+})(window, document, '//rum.beusable.net/script/b170425e191310u258/15b2425d50');
+</script>
+
+</body>
+</html>
+

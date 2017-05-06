@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>http://www.blueb.co.kr</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/style4.css" />
+<script type="text/javascript" src="../../static/js/packed.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    function sharefacebook(url){
+        window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+    }
+
+    function sharetwitter(url){
+        window.open("http://twitter.com/intent/tweet?u=" + url);
+    }
+</script>
+<style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    @media(min-width: 501px){
+        .content_img{
+            width: 500px;
+            height: 270px;
+        }
+        p{
+          font-size: 50px;
+        }
+        #md{
+          font-size: 62px;
+          font-family: 'Hanna'; 
+        }
+        #one{
+          font-size: 40px;
+        }
+        #two{
+          font-size: 45px;
+        }
+        #three{
+          font-size: 50px;
+        }
+        #hong{
+          width: 200px;
+        }
+        #page{
+          width: 200px;
+        }
+        #icon{
+          width: 90px;
+          height: 90px;
+        }
+        #face_share{
+          width: 60px; 
+          height: 60px; 
+          margin-right: 20px; 
+          margin-bottom: 25px;
+        }
+        #sldbt{
+            width: 32px;
+            height: 32px;
+        }
+        #pg_div{
+          width: 1100px;
+        }
+        #bt_div{
+          position: absolute; 
+          bottom: 30px; 
+          margin-left: 140px;
+        }
+        #pagination{
+          margin-left: 490px;
+        }
+    }
+    @media(max-width: 500px){
+        .content_img{
+            width: 250px;
+            height: 250px;
+        }
+        #md{
+          font-size: 25px;
+        }
+        #icon{
+          width: 30px;
+          height: 30px;
+        }
+        #one{
+          font-size: 16px;
+        }
+        #two{
+          font-size: 18px;
+        }
+        #three{
+          font-size: 20px;
+        }
+        #brbr2{
+          line-height: 50px;
+        }
+        #brbr3{
+          line-height: 50px;
+        }
+        #page{
+            width: 100px;
+        }
+        #hong{
+            width: 100px;
+        }
+        #face_share{
+          width: 20px; 
+          height: 20px; 
+          margin-right: 20px; 
+          margin-bottom: 0px;
+        }
+        #sldbt{
+            width: 20px;
+            height: 20px;
+        }
+        #p1{
+          margin-top: 30px;
+        }
+        #p2{
+          margin-top: 20px;
+        }
+        #pg_div{
+          width: 400px;
+        }
+        #bt_div{
+          position: absolute; 
+          bottom: 100px; 
+          margin-left: 0px;
+        }
+        #pagination{
+          margin-left: 110px;
+        }
+    }
+    a{
+      font-family: 'Hanna'; 
+      font-size: 20px;
+      font-weight: 900;
+    }
+</style>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    /*padding-top: 50px;*/ /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    /*width: 40%;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+</style>
+</head>
+<body>
+<div id="wrapper" style="font-family: 'Hanna'">
+        <div class="sliderbutton"><img id="sldbt" src="../../static/img/slide_bt_l.png" alt="Previous" onclick="slideshow.move(-1)" /></div>
+        <div id="slider">
+            <ul>
+                <li class="content" style="background-color: #FAECC5; text-align: center;">
+                    <p id="p1">
+                    <span id="md" style="font-weight: 900; color: #754F44">#이것은 나의 예상 밖<br></span>
+                    <span id="two" style="font-weight: 550;">혹시 예상과 다른 결과가 <br>
+                    나오셨나요?<br></span>
+                    <span id="two">그렇다면 다시 한 번 내 후보의<br><span>
+                    <span id="two">정책을 점검해보시고<br></span>
+                    <span id="md" style="color: red; font-weight: 900">5월 9일</span>, 신중하게 선택합시다!
+                    </p>
+                </li>
+                <li class="content" style="background-color: #FFDD73; text-align: center;">
+                    <p id="p2">
+                    <span id="md" style="font-weight: 900; color: #CE6D39">#마! 니 대통령쇼 모르나<br></span>
+                    <span id="one"  style="font-weight: 900;">좋은 건 널리 알리는<br></span>
+                    <span id="two"  style="font-weight: 900;">당신은 홍익인간의 후예<br></span>
+                    <span id="three"  style="font-weight: 900;">대통령쇼를 널리 알려주세요<br></span>
+                    <a href="javascript:sharefacebook('http://www.presidentshow.net')">
+                    <img id="icon" src="../../static/img/face_icon.png" style="margin-right: 20px;">
+                    </a>
+                    <a href="javascript:sharetwitter('http://www.presidentshow.net')">
+                    <img id="icon" src="../../static/img/twitterimg.png" style="">
+                    </a>
+                    <br id="brbr2">
+                    <span style="color: red"><i>결과 놉 사이트 예스</i></span>
+                    </p>
+                </li>
+                <li class="content" style="background-color: #FFE699; text-align: center;">
+                    <p id="p2">
+                    <span id="md" style="font-weight: 900; color: #754F44">#이게 다야?<br></span>
+                    <span id="two"  style="font-weight: 900;">응~ 아니야~<br></span>
+                    <span id="two"  style="font-weight: 900;">대통령쇼는 업뎃됩니다<br></span>
+                    <span id="two"  style="font-weight: 900;">5월 9일까지 쭉~<br></span>
+                    <a href="https://www.facebook.com/presidentshow59/"><img id="page" src="../../static/img/눌러.png"></a>
+                    <img id="hong" src="../../static/img/홍준표.png">          
+                    </p>
+                </li>
+                <li class="content" style="background-color: #DEDEDE; text-align: center;">
+                    <p id="p2">
+                    <br id="brbr3">
+                    <span id="two"># 시미끝창<br></span>
+                    <span id="two"># presidentshow59@gmail.com<br></span>
+                    <span id="two"># 대통령쇼 페이스북 <a href="https://www.facebook.com/presidentshow59/"><img id="face_share" src="../../static/img/face_icon.png" style=""></a><br></span>
+                    <span id="two"># www.presidentshow.net<br></span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="sliderbutton"><img id="sldbt" src="../../static/img/slide_bt_r.png" alt="Next" onclick="slideshow.move(1)" /></div>
+</div>
+<div id="pg_div" style="margin:0 auto;">
+    <ul id="pagination" class="pagination">
+        <li onclick="slideshow.pos(0)">1</li>
+        <li onclick="slideshow.pos(1)">2</li>
+        <li onclick="slideshow.pos(2)">3</li>
+        <li onclick="slideshow.pos(3)">4</li>
+    </ul>
+</div>
+
+<!--
+<div id="bt_div" style="">
+    <a id="af{{ctgr.idx}}" href="../index4"><button type="button" class="w3-btn w3-xlarge w3-margin-top r1" onclick="history.back()" style="background-color:white;color:#5D5D5D; font-weight: 100">< Prev</button></a>
+</div>
+-->
+
+
+
+
+<script type="text/javascript">
+var slideshow=new TINY.slider.slide('slideshow',{
+    id:'slider',
+    auto:3,
+    resume:true,
+    vertical:false,
+    navid:'pagination',
+    activeclass:'current',
+    position:0
+});
+</script>
+</div>
+<!--
+<div class="w3-container w3-bottom w3-hide-large w3-xlarge" style="background-color:#dedede;">
+
+    <a onclick="cart_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/cart_bt2.png" width=20px height=20px id="cart_bt" style="margin-bottom: -30px; padding-top: -10px;"></a>
+
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+    <a href="../index3" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/about_us2.png" width=20px height=20px style="margin-bottom: -30px; padding-top: -10px;"></a>
+    <img src="../../static/img/white.jpg" width=0px height=0px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=0px height=0px style="opacity: 0.01">
+    <a onclick="share_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/share_bt.png" width=20px height=20px style="margin-bottom: -30px; padding-top: -10px;"></a>
+
+
+    <br style="line-height: 0px;">
+
+
+    <a href="../" onclick="w3_close()" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;" >&nbsp;&nbsp;홈</a>
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=2px height=3px style="opacity: 0.01">
+
+    <a onclick="cart_open();" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">장바구니</a>
+
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+
+    <a href="index3" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">어바웃</a>
+    <img src="../../static/img/white.jpg" width=0px height=3px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=0px height=3px style="opacity: 0.01">
+    <a onclick="share_open();" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">공유</a>
+</div>
+-->
+<script type="text/javascript">
+  function cart_open(){
+    var modal = document.getElementById('cart');
+    modal.style.display = "block";
+    document.getElementById('cart_bt').src = "../../static/img/cart_bt2_clicked.png";
+
+    document.getElementById('sel_cate1').innerHTML = sel_cm_list[0][1];
+    document.getElementById('sel_cate2').innerHTML = sel_cm_list[1][1];
+    document.getElementById('sel_cate3').innerHTML = sel_cm_list[2][1];
+    document.getElementById('sel_cate4').innerHTML = sel_cm_list[3][1];
+    document.getElementById('sel_cate5').innerHTML = sel_cm_list[4][1];
+    document.getElementById('sel_cate6').innerHTML = sel_cm_list[5][1];
+    document.getElementById('sel_cate7').innerHTML = sel_cm_list[6][1];
+  }
+
+  function share_open(){
+    var modal = document.getElementById('share');
+    modal.style.display = "block";
+  }
+</script>
+</body>
+
+<div id="cart" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Cart</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+    {% for ctgr in categories%}
+      {% if ctgr.ctname == 'ec1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="청년 일자리"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="육아"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se2' %}
+      <input type="button" class="btn btn-danger btn-lg" value="교육"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'wel' %}
+      <input type="button" class="btn btn-danger btn-lg" value="기업 및 시장구조"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'dip' %}
+      <input type="button" class="btn btn-danger btn-lg" value="국방"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct6' %}
+      <input type="button" class="btn btn-danger btn-lg" value="임금/소득 지원"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct7' %}
+      <input type="button" class="btn btn-danger btn-lg" value="기타"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      <br/>      
+      <div id="sel_cate{{ctgr.idx}}" style="color: black; font-size: 10px; font-weight: 900">
+        선택안함
+      </div>
+      <br/>
+    {% endfor %}
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="share" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Share</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <a href="javascript:sharefacebook('http://www.presidentshow.net')">
+      <img src="../../static/img/facebookimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;"></span>
+  </a>
+  <br><br>
+
+  <a href="javascript:sharetwitter('http://www.presidentshow.net')">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;">
+      </span>
+  </a>
+  <br><br>
+    </div>
+    <div class="modal-footer">
+      결과는 공유되지 않습니다.    
+    </div>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod2 = document.getElementById('share');
+
+  // Get the button that opens the modal
+  var bt2 = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa2 = document.getElementsByClassName("close")[1];
+
+  // When the user clicks the button, open the modal 
+  bt2.onclick = function() {
+      mod2.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa2.onclick = function() {
+      mod2.style.display = "none";
+  }
+</script>
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod = document.getElementById('cart');
+
+  // Get the button that opens the modal
+  var bt = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  bt.onclick = function() {
+      mod.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa.onclick = function() {
+      mod.style.display = "none";
+      document.getElementById("cart_bt").src = "../../static/img/cart_bt2.png";
+  }
+</script>
+
+
+</html>

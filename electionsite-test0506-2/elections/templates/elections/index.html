@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html>
+<title>대통령쇼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<head>
+<meta name="description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="대통령쇼">
+<meta property="og:description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:image" content="http://www.presidentshow.net/static/img/first_page.PNG">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="210">
+<meta property="og:url" content="http://www.presidentshow.net">
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<style>
+body,h1,h2,h3,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<script type="text/javascript">
+    function sharefacebook(url){
+        window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+    }
+
+    function sharetwitter(url){
+        window.open("http://twitter.com/intent/tweet?u=" + url);
+    }
+</script>
+<script >
+function ca1_ch(a){
+        
+        var obj = document.getElementsByName("ec1");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+function ca1_ch2(a){
+        
+        var obj = document.getElementsByName("ec1");
+        obj[obj.length-1].checked = false;
+}
+
+function ca3_ch(a){
+        
+        var obj = document.getElementsByName("se1");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+function ca3_ch2(a){
+        
+        var obj = document.getElementsByName("se1");
+        obj[obj.length-1].checked = false;
+}
+
+function ca4_ch(a){
+        
+        var obj = document.getElementsByName("se2");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+function ca5_ch2(a){
+        
+        var obj = document.getElementsByName("pol");
+        obj[obj.length-1].checked = false;
+}
+
+
+
+
+function ca5_ch(a){
+        
+        var obj = document.getElementsByName("pol");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+
+
+function ca6_ch2(a){
+        
+        var obj = document.getElementsByName("dip");
+        obj[obj.length-1].checked = false;
+}
+
+
+function ca6_ch(a){
+        
+        var obj = document.getElementsByName("dip");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+
+
+function ca7_ch2(a){
+        
+        var obj = document.getElementsByName("wel");
+        obj[obj.length-1].checked = false;
+}
+
+function ca7_ch(a){/*중복체크방지*/
+        
+        var obj = document.getElementsByName("wel");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+
+
+function ca8_ch2(a){
+        
+        var obj = document.getElementsByName("ct6");
+        obj[obj.length-1].checked = false;
+}
+
+function ca8_ch(a){
+        
+        var obj = document.getElementsByName("ct6");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+
+
+
+function ca9_ch2(a){
+        
+        var obj = document.getElementsByName("ct7");
+        obj[obj.length-1].checked = false;
+}
+
+function ca9_ch(a){/*중복체크방지*/
+        
+        var obj = document.getElementsByName("ct7");
+
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i] != a){
+
+                obj[i].checked = false;
+
+            }
+
+        }
+        
+}
+function gogo0(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeIn(2000);
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#5').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#1').fadeOut();
+     ele.style.width = "0%";
+    window.scrollTo(0,0);
+}
+
+function gogo1(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#5').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#1').fadeIn(2000);
+     ele.style.width = "0%";
+    window.scrollTo(0,0);
+}
+function gogo2(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#5').fadeOut();
+    $('#1').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#2').fadeIn(2000);
+    ele.style.width = "14%";
+    window.scrollTo(0,0);
+}
+function gogo3(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#5').fadeOut();
+    $('#4').fadeOut();
+    $('#3').fadeIn(2000);
+     ele.style.width = "28%";
+    window.scrollTo(0,0);
+}
+function gogo4(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#5').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#1').fadeOut();
+    $('#4').fadeIn(2000);
+     ele.style.width = "42%";
+    window.scrollTo(0,0);
+}
+function gogo5(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeIn(2000);
+     ele.style.width = "56%";
+    window.scrollTo(0,0);
+}
+
+function gogo6(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#5').fadeOut();
+    $('#7').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#6').fadeIn(2000);
+     ele.style.width = "70%";
+    window.scrollTo(0,0);
+}
+
+function gogo7(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#7').fadeIn(2000);
+     ele.style.width = "84%";
+    window.scrollTo(0,0);
+}
+
+function gogo8(){
+  var ele = document.getElementById('myBar');
+    $('#intro').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#7').fadeIn(2000);
+     ele.style.width = "100%";
+    window.scrollTo(0,0);
+}
+</script>
+<style>
+        .cate{ width:400px; height:400px; background-image:url(../../static/img/1.png); }
+        .panel-body{ 
+          background:; 
+          font-weight: 600; 
+          font-size: 18px; 
+          line-height: 200%;
+          width: auto;
+        }
+        .twosteps{ float:left ; width:50%;}
+        .imgsteps{
+          float: left; 
+          width:70%;
+        }
+        #tete{
+            width: 70%;
+            height: 70%;
+
+        }
+        #re_btn{
+          float: right;
+        }
+
+        @media(min-width:501px){
+          .dt_cm{
+            line-height: 1.5em;
+            letter-spacing: 0.5px;
+          }
+           body{
+            overflow-x:scroll;
+          }
+          .modal-content{
+              width: 40%;
+          }
+          .g_img{
+            width: 400px;
+            height: 500px;
+          }
+          .under_bt{
+            margin-left: 240px;
+          }
+          .intro_bt{
+            margin-left: 500px;
+          }
+          .result_bt{
+            margin-left: 240px;
+          }
+        }
+        @media(max-width:500px) {
+          .under_bt{
+            float: right;
+          }
+          .result_bt{
+            float: right;
+          }
+          .intro_bt{
+            float: right;
+          }
+          .g_img{
+            width: 100%;
+            height: 300px;
+          }
+          .modal-content{
+            width: 80%;
+          }
+          .twosteps{ 
+            clear:left; 
+            width: 100%;
+          } 
+          #tete{
+            clear:left;
+            width: 200%;
+            height: 200%;
+          }
+          .dt_cm{
+            line-height: 1.6em;
+            margin-left: 0px;
+            font-size: 15px;
+            letter-spacing: 1px;
+          }
+          #결과보기{
+            margin-left: 0%;
+
+          }
+          #re_btn{
+            text-align: center;
+            margin-left: 0%;
+          }
+          .c1{
+            margin-left: 1%;
+          }
+          h1{
+            font-family: 'Hanna'; 
+            font-size: 200%;
+          }
+          #cm_cm{
+            font-size: 15px;
+          }
+          .col-md-4{
+            text-align: center;
+          }
+        
+        }
+        .collapsed{ font-size: 20px; font-weight: 900}
+        .checks {position: relative;}
+        #cm_cm{
+          color: black;
+        }
+        #dt_cmcm{
+          color: black;
+        }
+        #headingTwo{
+          background-color: #EAEAEA;
+        }
+
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+  font-size:16px;
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-size:16px;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 21px;  /* 체크박스의 너비를 지정 */
+  height: 21px;  /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center; 
+  vertical-align: middle;
+  background: #ffffff;
+  border: 4px solid #ffffff;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(255,255,255,0.5), inset 0px -15px 10px -12px rgba(255,255,255,0.5);
+  font-size:16px;
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+  font-size:16px;
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #9FC93C;
+  text-shadow: 1px 1px #fff;
+  background: #9FC93C;
+  border-color: #9FC93C;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(0,0,0,0.1);
+  font-size:16px;
+}
+
+.checks.small input[type="checkbox"] + label {
+  font-size: 12px;
+}
+
+.checks.small input[type="checkbox"] + label:before {
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 11px;
+}
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+  font-size:16px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #000000;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+  font-size:16px;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1; 
+  background: transparent;
+  border-color:transparent #000000 #000000 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+font-size:16px;
+}
+.checks.etrans{
+    font-size:16px;
+  }
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #000000;
+  text-align: center;
+  border: 1px solid #000000;
+
+
+
+</style>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    /*width: 80%;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #467F88;
+    color: white;
+}
+</style>
+<style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    .col-md-4{ font-size: 18px; font-weight: 900;}
+    h3{
+        font-size: 30px;
+        font-weight: 2000;
+    }
+    
+    h5{
+        font-family: 'Hanna'; 
+        font-size: 25px;
+    }
+    h1{
+        font-family: 'Hanna'; 
+        font-size: 200%;
+    }
+    li{
+        list-style: none;
+    }
+    .panel-body{font-family: 'Hanna';}
+    .nav-cate{
+      font-family: 'Hanna'; 
+      font-size: 25px;
+      font-weight: 900;
+    }
+    a{
+      font-family: 'Hanna'; 
+      font-size: 20px;
+      font-weight: 900;
+    }
+</style>
+<style>
+    @media(min-width: 501px){
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      h4 {font-family: 'Nanum Gothic'; font-size:20px;}
+    }
+    @media all and(min-width: 450px)and (max-width:500px){
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      h4 {font-family: 'Nanum Gothic'; font-size:15px;}
+      #reslk{
+        font-size: 1%;
+      }
+      .upping{
+        font-size:20px;
+      }
+      .upp{
+        margin-left: 0%;
+      }
+      #intr{
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media(max-width: 449px){
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      h4 {font-family: 'Nanum Gothic'; font-size:15px;}
+      #reslk{
+        font-size: 1%;
+      }
+      .upping{
+        font-size:10px;
+      }
+      .upp{
+        margin-left: 3%;
+      }
+      #intr{
+        width: 100%;
+        height: auto;
+      }
+    }
+</style>
+<style>
+  html, body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  #layerBox{
+    height: 100%;
+    position: relative;
+  }
+  #layerInner{
+    position: absolute;
+    bottom:0px;
+    right:0px;
+  }
+  .nav li{    
+    float : left;
+    margin-right: 15px;
+  }
+  #top_mar{
+  height:134px;
+  }
+  .navi_set{
+  padding:30px;
+  position: relative;
+  }
+  .container{
+    margin-top: 50px;
+  }
+  #ee{
+    text-align:right;
+    color:red;
+  
+  }
+</style>
+<style type="text/css">
+        #layer_fixed
+        {
+            height:134px;
+            width:100%;
+            color: #555;
+            font-size:12px;
+            position:fixed;
+            z-index:1000;
+            top:0px;
+            left:0px;
+            background-color: #D8D8D8;
+        }
+
+</style>
+<style>
+  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+  #cm_cm {font-family: 'Nanum Gothic'; }
+  .dt_cm{font-family: 'Nanum Gothic';}
+  .button {
+    margin-left: 2%;
+    padding : 0.9em 1.0em;
+    border-radius : 1.6em;
+    color : #fff;
+    font-size : 18px;
+    font-family : 'Lato', sans-serif;
+    font-weight : 700;
+    font-size: 10px;
+    text-decoration : none;
+    background-color : #FFBB00;
+    box-shadow : 0 5px 20px rgba(153, 56, 0, 0.5);
+    width: 120px;
+}
+</style>
+<style>
+#myProgress {
+  width: 330px;
+  background-color: #dedede;
+  border-radius: 9px;
+  margin-left: 5px;
+}
+
+#myBar {
+  width: 1%;
+  height: 15px;
+  background-color: #467F88;
+  border-radius: 9px;
+  margin-bottom: 5px;
+}
+</style>
+
+</head>
+<body bgproperties="fixed" oncontextmenu="return false" ondragstart="return false" oneselectstart="return false" style="background-color: white" onload="art();">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97823531-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Sidenav/menu -->
+<nav class="w3-sidenav w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px; background-color:#467F88; background-image: url(); " id="mySidenav" ><br>
+  <div class="tmp" style="background-color: ">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-padding-xlarge  w3-black w3-hide-large w3-display-topleft w3-hover-white" style="width:100%; font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64" ><b>Category<img src = ""></b></h3>
+  </div>
+  <a href="#Intro" onclick="gogo0();" class="w3-padding w3-hover-white" ><span style="color:#ffffff; font-weight: 100;">#Intro</span></a>
+  <a href="#청년 일자리" onclick="gogo1();" class="w3-padding w3-hover-white" ><span style="color:#ffffff; font-weight: 100;">#청년 일자리</span></a> 
+  <a href="#육아" onclick="gogo2();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#육아</span></a> 
+  <a href="#여성" onclick="gogo3();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#여성</span></a> 
+  <a href="#노인" onclick="gogo4();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#노인</span></a> 
+  <a href="#국방" onclick="gogo5();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#국방</span></a>
+  <a href="#환경" onclick="gogo6();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#환경</span></a> 
+  <a href="#기타" onclick="gogo7();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#기타</span></a>  
+  <!--
+  <a href="#정치(정치구조)" onclick="w3_close()" class="w3-padding w3-hover-white"><span style="color:#664B00">#정치(정치구조)</span></a>
+  -->
+  <a href="#결과보기" onclick="gogo8();" class="w3-padding w3-hover-white"><span style="color:#ffffff; font-weight: 100;">#결과보기</span></a>
+  <div id="container">
+  <!--
+   스크롤 위치
+  <div id="log">0</div>
+  -->
+</div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-xlarge" style="background-color: #dedede;">
+  <!--
+  <a href="javascript:void(0)" class="w3-btn w3-lime w3-border w3-border-white w3-margin-right" onclick="w3_open()">MENU</a>
+  <span></span>
+  -->
+  <!--
+  <div class="">
+    <b style="font-size: 16px;">Category<img src = "../../static/img/flower3.png" style="width: 5%; height: 5%;"></b>
+  </div>
+  -->
+
+  
+  <div class="c1" style="text-align: left;">
+<!--
+    <a href="#경제(일자리)" onclick="w3_close()" class="button w3-hover-white" ><span style="color:#664B00; font-size: 18px;">#경제(일자리)</span></a> 
+    <a href="#안보(싸드)" onclick="w3_close()" class="button w3-hover-white"><span style="color:#664B00; font-size: 18px; ">#안보(싸드)</span></a> 
+
+          
+
+  </div>
+  <div class="c1">
+  <a href="#안보(대북)" onclick="w3_close()" class="button w3-hover-white"><span style="color:#664B00; font-size: 18px; ">#안보(대북)</span></a> 
+  <a href="#복지" onclick="w3_close()" class="button w3-hover-white"><span style="color:#664B00; font-size: 18px; ">#복지</span></a>
+    <a href="#외교" onclick="w3_close()" class="button w3-hover-white"><span style="color:#664B00; font-size: 18px; ">#외교</span></a> 
+
+        <a href="#정치(정치구조)" onclick="w3_close()" class="w3-hover-white"><span style="color:#664B00; font-size: 20px;">#정치(정치구조)</span></a>
+        
+        </div>
+  <div class="c1">
+  <span style="color:red; font-size: 10px; "><b>* 해당 카테고리로 바로 가려면 클릭하세요 *</b></span> &nbsp;
+  <a href="#결과보기" onclick="w3_close()" class="button w3-hover-white"><span id="reslk" style="color:#664B00; margin-left:0%;  font-size: 80%;">#결과보기</span></a>
+  -->
+
+  <span onclick="gogo1();" class="upping"><b>청년</b></span>
+  <span onclick="gogo2();" class="upping upp" style="margin-left: 5%;"><b>육아</b></span>
+  <span onclick="gogo3();" class="upping upp" style="margin-left: 5%;"><b>여성</b></span>
+  <span onclick="gogo4();" class="upping upp" style="margin-left: 5%;"><b>노인</b></span>
+  <span onclick="gogo5();" class="upping upp" style="margin-left: 5%;"><b>국방</b></span>
+  <span onclick="gogo6();" class="upping upp" style="margin-left: 5%;"><b>환경</b></span>
+  <span onclick="gogo7();" class="upping upp" style="margin-left: 5%;"><b>기타</b></span>
+  <div id="myProgress" style="margin-left: 0%;">
+    <div id="myBar" style="margin-left: 0%;"></div>
+  </div>
+  </div>
+
+</header>
+
+
+<!-- Overlay effect when opening sidenav on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+<div id="top_mar" style="display:none;"></div>
+  <div class="container" style="background-attachment: fixed; background-image: url();">
+
+            <form name=frm method="GET" >
+                <div id="intro" style="text-align: center;">
+                <br/>
+                <img id="intr" src="../../static/img/intro3-2.jpg"><br/>
+                <!--
+                <span style="font-size: 20px;">매니페스토어(Manifestore)에 오신 것을 환영합니다!<br/><br/></span>
+                <div style="text-align: left;">
+                <b>‘매니페스토’</b>란? 라틴어에서 기원한 단어로서, 선거에 출마한 후보자의 공약을 유권자에게 중요한 판단기준으로 삼도록 하겠다는 취지의 운동입니다.<br/><br/>
+                </div>
+                <div style="text-align: left;">
+                <b>#꿀팁</b><br/>
+                공약을 클릭하시면, 더보기 기능을 통해 더 많은 내용을 확인할 수 있습니다.<Br/><br/>
+                </div>
+                <div style="text-align: left;">
+                매니페스토어에서 후보들의 정책들을 찬찬히 둘러보시고 쇼핑하세요!<br/>
+                </div>
+                -->
+                  <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-padding-16 w3-xlarge w3-margin-top intro_bt" onclick="m_intro();" style="background-color: white; color:#5D5D5D;">Next ></button>
+                  <br/><br/><br/>
+                </div>
+                {% for ctgr in categories %}
+                <div id="{{ctgr.idx}}">
+                <a id="{{ctgr.category}}"><br/></a>
+                <h5> {{ctgr.idx}} . {{ctgr.category}}&nbsp;&nbsp;<span style="font-size: 10px;"> *중복선택가능</span></h5>
+                {% for commitment in commitments %}
+                    {% if commitment.category == ctgr.category %}
+                        {% if commitment.party_number == 1 %}
+
+                            <div class="checks etrans" style="margin-bottom: -20px; margin-top: -0px;">  
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca1_ch2(this);" > 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='1' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca3_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca4_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick=""> 
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca6_ch2(this);"> 
+                            {% endif %}
+                            
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca7_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca8_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='1' onclick="ca9_ch2(this);"> 
+                            {% endif %}
+                            
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <!-- Accordian Panel --> 
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+                              <!-- Voting Record Panel --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{commitment.index}}" aria-expanded="false" aria-controls="collapseTwo">
+                                     <span id="cm_cm">{{commitment.commitment}}</span>
+                                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="font-size: 16px;"></span>
+                                     </a>
+                                     
+                                  </h4>
+
+                                <div id="collapse{{commitment.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body"> 
+                                   <hr>
+                                    <div class="twosteps">
+                                        <h4 class="dt_cm"><span id="dt_cmcm">{{commitment.detail_cmmt}}</span></h4>
+                                    </div>
+                                    <!--                              
+                                    <div class="imgsteps">
+                                        <img src="" id="tete">
+                                    </div>
+                                    -->
+                                    <hr color="black" size="20" height="40" width="90%" align="center">
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+
+                                  </label>
+                                  </div>
+
+                        {% endif %}
+
+                        {% if commitment.party_number == 2 %}
+                            <div class="checks etrans" style="margin-bottom: -20px; margin-top: -0px;">
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca1_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='2' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca3_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca4_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick=""> 
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca6_ch2(this);"> 
+                            {% endif %}
+                            
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca7_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca8_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='2' onclick="ca9_ch2(this);"> 
+                            {% endif %}
+
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <!-- Accordian Panel --> 
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <!-- Voting Record Panel --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{commitment.index}}" aria-expanded="false" aria-controls="collapseTwo">
+                                     <span id="cm_cm">{{commitment.commitment}}</span>
+                                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="font-size: 16px;"></span>
+                                     </a>
+                                     
+                                  </h4>
+
+                                <div id="collapse{{commitment.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body"> 
+                                   <hr>
+                                    <div class="twosteps">
+                                        <h4 class="dt_cm"><span id="dt_cmcm">{{commitment.detail_cmmt}}</span></h4>
+                                    </div>
+                                    <!--                              
+                                    <div class="imgsteps">
+                                        <img src="" id="tete">
+                                    </div>
+                                    -->
+                                    <hr color="black" size="20" height="40" width="90%" align="center">
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                </label>
+                                </div>
+                            
+                        {% endif %}
+
+                        {% if commitment.party_number == 3 %}
+                            <div class="checks etrans" style="margin-bottom: -20px; margin-top: -0px;">
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca1_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='3' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca3_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca4_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick=""> 
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca6_ch2(this);"> 
+                            {% endif %}
+                          
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca7_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca8_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='3' onclick="ca9_ch2(this);"> 
+                            {% endif %}
+                            
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <!-- Accordian Panel --> 
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <!-- Voting Record Panel --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{commitment.index}}" aria-expanded="false" aria-controls="collapseTwo">
+                                     <span id="cm_cm">{{commitment.commitment}}</span>
+                                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="font-size: 16px;"></span>
+                                     </a>
+                                     
+                                  </h4>
+
+                                <div id="collapse{{commitment.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body"> 
+                                   <hr>
+                                    <div class="twosteps">
+                                        <h4 class="dt_cm"><span id="dt_cmcm">{{commitment.detail_cmmt}}</span></h4>
+                                    </div>
+                                    <!--                              
+                                    <div class="imgsteps">
+                                        <img src="" id="tete">
+                                    </div>
+                                    -->
+                                    <hr color="black" size="20" height="40" width="90%" align="center">
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </label>
+                                  </div>
+
+                        {% endif %}
+
+                        {% if commitment.party_number == 4 %}
+                            <div class="checks etrans" style="margin-bottom: -20px; margin-top: -0px;">
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca1_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='3' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca3_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca4_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick=""> 
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca6_ch2(this);"> 
+                            {% endif %}
+                          
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca7_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca8_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='4' onclick="ca9_ch2(this);"> 
+                            {% endif %}
+                            
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <!-- Accordian Panel --> 
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <!-- Voting Record Panel --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{commitment.index}}" aria-expanded="false" aria-controls="collapseTwo">
+                                     <span id="cm_cm">{{commitment.commitment}}</span>
+                                      <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="font-size: 16px;"></span>
+                                     </a>
+                                     
+                                  </h4>
+
+                                <div id="collapse{{commitment.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body"> 
+                                   <hr>
+                                    <div class="twosteps">
+                                        <h4 class="dt_cm"><span id="dt_cmcm">{{commitment.detail_cmmt}}</span></h4>
+                                    </div>
+                                    <!--                             
+                                    <div class="imgsteps">
+                                        <img src="{{commitment.imgsrc}}" id="tete">
+                                    </div>
+                                    -->
+                                    <hr color="black" size="20" height="40" width="90%" align="center">
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </label>
+                                  </div>
+                            
+                        {% endif %}
+
+                        {% if commitment.party_number == 5 %}
+                            <div class="checks etrans" style="margin-bottom: -20px; margin-top: -0px;">
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca1_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='3' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca3_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca4_ch2(this);"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick=""> 
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca6_ch2(this);"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca7_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca8_ch2(this);"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='5' onclick="ca9_ch2(this);"> 
+                            {% endif %}
+                            
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <!-- Accordian Panel --> 
+                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <!-- Voting Record Panel --> 
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{commitment.index}}" aria-expanded="false" aria-controls="collapseTwo">
+                                     <span id="cm_cm">{{commitment.commitment}}
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="font-size: 16px;"></span>
+                                     </span>
+
+                                  </h4>
+                                     </a>
+                                
+
+                                <div id="collapse{{commitment.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body"> 
+                                   <hr>
+                                    <div class="twosteps">
+                                    <h4 class="dt_cm">
+                                        <span id="dt_cmcm">{{commitment.detail_cmmt}}</span>
+                                    </h4>
+                                    </div>
+                                  <!--                              
+                                    <div class="imgsteps">
+                                        <img src="" id="tete">
+                                    </div>
+                                    -->
+                                    <hr color="black" size="20" height="40" width="90%" align="center">
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </label>
+                                  </div>
+                            
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                            <div class="checks etrans">
+                            {% if ctgr.ctname == 'ec1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca1_ch(this)"> 
+                            {% endif %}
+                            <!--
+                            {% if ctgr.ctname == 'ec2' %}
+                            <input type=checkbox name="{{ctgr.ctname}}" value='3' onclick="ca2_ch(this)"> {{commitment.commitment}} <br/>
+                            {% endif %}
+                            -->
+                            {% if ctgr.ctname == 'se1' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca3_ch(this)"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'se2' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca4_ch(this)"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'pol' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca5_ch(this)"> 
+                            {% endif %}
+                            {% if ctgr.ctname == 'dip' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca6_ch(this)"> 
+                            {% endif %}
+                          
+                            {% if ctgr.ctname == 'wel' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca7_ch(this)"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct6' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca8_ch(this)"> 
+                            {% endif %}
+
+                            {% if ctgr.ctname == 'ct7' %}
+                            <input type=checkbox id="ex_chk{{ctgr.ctname}}{{commitment.party_number}}" name="{{ctgr.ctname}}" value='6' onclick="ca9_ch(this)"> 
+                            {% endif %}
+                            
+
+                            <label for="ex_chk{{ctgr.ctname}}{{commitment.party_number}}">
+                            <style>
+                                        @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+                                        h4 {font-family: 'Hanna';}
+                                    </style>
+                                <h4>선호하는 정책 없음</h4>
+                            </label>
+                            </div>
+
+               
+                <hr color="red"  width="90%" align="center" style="margin-bottom: -10px; margin-top: -5px;">
+                <!--
+                <a href="" name="down2">
+                <img src="../../static/img/down2.gif" class="center-block" name="down" style="width: 10%; height: 10%;" id="ttt">
+                </a>
+                -->
+
+                {% if ctgr.idx == 1%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn  w3-large w3-margin-top" onclick="m_bf0();" style="background-color: white;color:#5D5D5D">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn  w3-large w3-margin-top under_bt" onclick="m_af0();" style="background-color: white; color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 2%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf1();" style="background-color: white;color:#5D5D5D">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top under_bt" onclick="m_af1();" style="background-color:white;color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 3%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf2();" style="background-color: white;color:#5D5D5D">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top under_bt" onclick="m_af2();" style="background-color: white;color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 4%} 
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf3();" style="background-color: white;color:#5D5D5D;">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top under_bt" onclick="m_af3();" style="background-color: white;color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 5%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf4();" style="background-color: white;color:#5D5D5D;">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top under_bt" onclick="m_af4();" style="background-color: white;color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 6%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf5();" style="background-color: white;color:#5D5D5D;">< Prev</button>
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top under_bt" onclick="m_af5();" style="background-color: white;color:#5D5D5D;">Next ></button>
+                {% endif %}
+
+                {% if ctgr.idx == 7%}
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top" onclick="m_bf6();" style="background-color: white;color:#5D5D5D;">< Prev</button>            
+                <a id="af{{ctgr.idx}}"></a><button type="button" class="w3-btn w3-large w3-margin-top result_bt" onclick="prevent();" style="background-color: white;color:#5D5D5D;">Result ></button>
+
+                {% endif %}
+                <br/><br/><br/><br/>
+                </div>
+                {% endfor %}
+                 
+            </div>
+            </form>
+
+  </div>
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-bottom w3-hide-large w3-xlarge" style="background-color:#dedede;">
+    <table style="width: 100%; background-color: #dedede;">
+        <tr>
+            <td>
+            <a href="../" onclick="w3_close()" class="w3-padding" style="font-size: 10px; text-align: center; margin-top: -20px;"><img src="../../static/img/home_icon2.jpg" width=29px height=29px style="margin-bottom: 2px;"></a>
+            </td>
+            <td>
+                <a onclick="cart_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/cart_icon2.jpg" width=29px height=29px id="cart_bt" style=""></a>
+            </td>
+            <td>
+                <a href="./index3" class="w3-padding" style=""><img src="../../static/img/about_icon2.jpg" width=29px height=29px style=""></a>
+            </td>
+            <td>
+                <a onclick="share_open();" class="w3-padding" style=" margin-top: -20px;"><img src="../../static/img/share_icon2.jpg" width=29px height=29px style=""></a>
+            </td>
+        </tr>
+    </table>
+
+
+    <!--
+    <br style="line-height: 0px;">
+
+
+    <a href="../" onclick="w3_close()" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">&nbsp;&nbsp;홈</a>
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=2px height=3px style="opacity: 0.01">
+
+    <a onclick="cart_open();" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">장바구니</a>
+
+    <img src="../../static/img/white.jpg" width=3px height=3px style="opacity: 0.01">
+
+    <a href="index3" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">어바웃</a>
+    <img src="../../static/img/white.jpg" width=0px height=3px style="opacity: 0.01">
+    <img src="../../static/img/white.jpg" width=0px height=3px style="opacity: 0.01">
+    <a onclick="share_open();" class="w3-padding w3-hover-white" style="font-size: 10px; text-align: center; color: black; font-weight: 100;">공유</a>
+    -->
+</footer>
+
+<!-- Trigger/Open The Modal-->
+<button id="myBtn" style="visibility: hidden;">Open Modal</button>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <!--
+      <span style="color:#ED006D; font-size: 12px; "><b>* 해당 카테고리로 바로 가려면<br/> 상단(모바일) 혹은 좌측(웹) 메뉴에서 <br>클릭하세요 *</b></span>
+      -->
+      <span style="color:white; font-size: 20px;"><b>Cart</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+    <!--
+      <h1 style="font-size: 27px;">이제 <span style="color:#ED006D">카테고리</span>별로 입맛에 맞는 <span style="color:#ED006D">정책</span>을 골라보세요<br/></h1>
+      -->
+      <img src="../../static/img/2-1.png" class="g_img" style=""><br/><br/><br/>
+
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="cart" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Cart</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+    {% for ctgr in categories%}
+      {% if ctgr.ctname == 'ec1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="청년 일자리"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se1' %}
+      <input type="button" class="btn btn-danger btn-lg" value="육아"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'se2' %}
+      <input type="button" class="btn btn-danger btn-lg" value="여성"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'wel' %}
+      <input type="button" class="btn btn-danger btn-lg" value="노인"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'dip' %}
+      <input type="button" class="btn btn-danger btn-lg" value="국방"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct6' %}
+      <input type="button" class="btn btn-danger btn-lg" value="환경"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      {% if ctgr.ctname == 'ct7' %}
+      <input type="button" class="btn btn-danger btn-lg" value="기타"
+      style="background-color: white; border: 0px; color: black; font-size: 20px; font-weight: 900" disabled>
+      {% endif %}
+      <br/>      
+      <div id="sel_cate{{ctgr.idx}}" style="color: black; font-size: 10px; font-weight: 900">
+        선택안함
+      </div>
+      <br/>
+    {% endfor %}
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+  function bell_open(){
+    document.getElementById('bell_bt').src = "../../static/img/bell_bt_clicked.png";
+  }
+
+  function share_open(){
+    var modal = document.getElementById('share');
+    modal.style.display = "block";
+  }
+
+  function cart_open(){
+    var modal = document.getElementById('cart');
+    modal.style.display = "block";
+    document.getElementById('cart_bt').src = "../../static/img/cart_icon2.jpg";
+
+    document.getElementById('sel_cate1').innerHTML = sel_cm_list[0][1];
+    document.getElementById('sel_cate2').innerHTML = sel_cm_list[1][1];
+    document.getElementById('sel_cate3').innerHTML = sel_cm_list[2][1];
+    document.getElementById('sel_cate4').innerHTML = sel_cm_list[3][1];
+    document.getElementById('sel_cate5').innerHTML = sel_cm_list[4][1];
+    document.getElementById('sel_cate6').innerHTML = sel_cm_list[5][1];
+    document.getElementById('sel_cate7').innerHTML = sel_cm_list[6][1];
+  }
+  var cm_list = [
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,['','',''] ,
+        ['','',''] ,['','',''] ,['','',''],
+        ];
+  var cate_num = 7;
+  var sel_cm_list = [
+        ['청년 일자리', ''],['육아', ''],['여성', ''],['노인', ''],['국방', ''],['환경', ''],['기타', ''],
+  ];
+  function art(){
+    //var a = document.getElementsByName("down2");
+    //a[0].href = "#안보(싸드)";
+    //a[1].href = "#안보(대북)";
+    //a[2].href = "#복지";
+    //a[3].href = "#외교";
+    //a[4].href = "#결과보기";
+    var ctmd = document.getElementById('cart');
+    ctmd.style.display = "none";
+    var cms = '{{ cmts|escapejs }}'
+    var tmp = cms;
+    
+        var j=0;
+
+        for(var i=1;i<=cate_num*10;i++){
+            var cm_idx = tmp.indexOf('commitment');
+            tmp = tmp.substring(cm_idx+14,cms.length);
+            //alert(tmp);
+            if(i%2==0){
+                //alert(tmp);
+                var tm_idx = tmp.indexOf('"');
+                var ttmp = tmp.substring(0,tm_idx);
+                cm_list[j++][0] += ttmp;
+            }
+        }
+  
+        j=0;
+        tmp = cms;
+        for(var i=1;i<=cate_num*5;i++){
+            var cm_idx = tmp.indexOf('category');
+            tmp = tmp.substring(cm_idx+12,cms.length);
+                var tm_idx = tmp.indexOf('"');
+                //alert(tmp);
+                var ttmp = tmp.substring(0,tm_idx);
+                //alert(ttmp);
+                cm_list[j++][1] += ttmp;
+        }
+        
+        j=0;
+        tmp = cms;
+        for(var i=1;i<=cate_num*5;i++){
+            var cm_idx = tmp.indexOf('party_number');
+            tmp = tmp.substring(cm_idx+15,cms.length);
+                var ttmp = tmp.substring(0,1);
+                //alert(ttmp);
+                cm_list[j++][2] += ttmp;
+        }
+        
+    //var modal = document.getElementById('myModal');
+    //modal.style.display = "block";
+
+    $('#intro').fadeIn(2000);
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+  }
+
+  var ele = document.getElementById('myBar');
+
+  function m_intro(){
+    $('#intro').fadeOut();
+    $('#1').fadeIn(2000);
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "0%";
+    
+    window.scrollTo(0,0);
+  }
+
+
+  function m_af0(){
+    var obj1 = document.getElementsByName("ec1");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[청년 일자리]를 선택하지 않으셨습니다.");
+          return false;
+    }
+
+    var obj = document.getElementsByName("ec1");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    //alert(s);
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '청년 일자리'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    //alert(tmp);
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[0][1] = s;
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeIn(2000);
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "14%";
+    
+    window.scrollTo(0,0);
+  }
+
+  function m_af1(){
+    var obj1 = document.getElementsByName("se1");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[육아]를 선택하지 않으셨습니다.");
+          return false;
+    }
+
+    var obj = document.getElementsByName("se1");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    //alert(cm_list);
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '육아'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[1][1] = s;
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeIn(2000);
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "28%";
+    window.scrollTo(0,0);
+  }
+
+  function m_af2(){
+    var obj1 = document.getElementsByName("se2");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[여성]을 선택하지 않으셨습니다.");
+          return false;
+    }
+
+    var obj = document.getElementsByName("se2");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    //alert(cm_list);
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '여성'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[2][1] = s;
+
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeIn(2000);
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "42%";
+    window.scrollTo(0,0);
+  }
+
+  function m_af3(){
+    var obj1 = document.getElementsByName("wel");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[노인]를 선택하지 않으셨습니다.");
+          return false;
+    }
+
+    var obj = document.getElementsByName("wel");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    //alert(cm_list);
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '노인'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[3][1] = s;
+
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeIn(2000);
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "56%";
+    window.scrollTo(0,0);
+  }
+
+  function m_af4(){
+    var obj1 = document.getElementsByName("dip");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[국방]을 선택하지 않으셨습니다.");
+          return false;
+    }
+
+    var obj = document.getElementsByName("dip");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    //alert(cm_list);
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '국방'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[4][1] = s;
+
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeIn(2000);
+    $('#7').fadeOut();
+    ele.style.width = "70%";
+    window.scrollTo(0,0);
+  }
+
+  function m_af5(){
+    var obj1 = document.getElementsByName("ct6");
+    var cnt=0;
+    for(var i=0; i<obj1.length; i++){
+      if(obj1[i].checked==false){
+            cnt++;
+          }
+      }
+    if(cnt==obj1.length){
+          alert("[환경]을 선택하지 않으셨습니다.");
+          return false;
+    }
+
+
+    var obj = document.getElementsByName("ct6");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '환경'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+
+    var s = '';
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s += tmp[i] + '<br/>';
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[5][1] = s;
+
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeIn(2000);
+    ele.style.width = "84%";
+    window.scrollTo(0,0);
+  }
+
+  function prevent(){
+    var obj = document.getElementsByName("ct7");
+    var s = [0,0,0,0,0];
+        for(var i=0; i<obj.length; i++){
+
+            if(obj[i].checked){
+
+                s[i*1] += 1;      
+
+            }
+
+        }
+
+    var tmp = ['','','','',''];
+    var k=0;
+    for(var j=0; j<s.length; j++){
+      if(s[j]==1){
+        for(var i=0; i<cm_list.length;i++){
+          if(cm_list[i][1] == '환경'){
+            if(cm_list[i][2]*1 == j*1+1){
+              tmp[k++] = cm_list[i][0];
+            }
+          }
+        }
+      }
+    }
+    k=0;
+    var s = ['','','','',''];
+    for(var i=0; i<tmp.length; i++){
+      if(tmp[i]!=''){
+        //alert(tmp);
+        s[k++] = tmp[i];
+      }
+    }
+
+    //alert(s);
+    sel_cm_list[6][1] = s;
+
+        var obj1 = document.getElementsByName("ec1");
+        var obj2 = document.getElementsByName("se1");
+        var obj3 = document.getElementsByName("se2");
+        //var obj4 = document.getElementsByName("pol");
+        var obj5 = document.getElementsByName("dip");
+        var obj6 = document.getElementsByName("wel");
+        var obj7 = document.getElementsByName("ct6");
+        var obj8 = document.getElementsByName("ct7");
+        var pp= document.frm;
+        var cnt=0;
+        var nosel = [0,0,0,0,0,0,0];
+        for(var i=0; i<obj1.length; i++){
+          if(obj1[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        if(cnt==obj1.length){
+          //alert("경제(일자리)를 체크하세요");
+          //return false;
+          nosel[0]++;
+        }
+        cnt=0;
+        for(var i=0; i<obj2.length; i++){
+          if(obj2[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        if(cnt==obj2.length){
+          //alert("안보(싸드)를 체크하세요");
+          //return false;
+          nosel[1]++;
+        }
+         cnt=0;
+        for(var i=0; i<obj3.length; i++){
+          if(obj3[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        if(cnt==obj3.length){
+          //alert("안보(대북)를 체크하세요");
+          //return false;
+          nosel[2]++;
+        }
+
+        /*
+        cnt=0;
+        for(var i=0; i<obj4.length; i++){
+          if(obj4[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        
+        if(cnt==obj4.length){
+          //alert("정치(정치구조)를 체크하세요");
+          //return false;
+          nosel[3]++;
+        }
+        */
+
+        cnt=0;
+        for(var i=0; i<obj5.length; i++){
+          if(obj5[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        if(cnt==obj5.length){
+          //alert("외교를 체크하세요");
+          //return false;
+          nosel[3]++;
+        }
+
+        cnt=0;
+        for(var i=0; i<obj6.length; i++){
+          if(obj6[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        
+        if(cnt==obj6.length){
+          //alert("복지를 체크하세요");
+          //return false;
+          nosel[4]++;
+        }
+
+        cnt=0;
+        for(var i=0; i<obj7.length; i++){
+          if(obj7[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        
+        if(cnt==obj7.length){
+          //alert("복지를 체크하세요");
+          //return false;
+          nosel[5]++;
+        }
+
+        cnt=0;
+        for(var i=0; i<obj8.length; i++){
+          if(obj8[i].checked==false)
+            {
+              cnt++;
+            }
+        }
+        
+        if(cnt==obj8.length){
+          //alert("복지를 체크하세요");
+          //return false;
+          nosel[6]++;
+        }
+        
+        var ss = '';
+        var check=0;
+        for(var i=0;i<nosel.length;i++){
+          if(nosel[i]==1){
+            if(i==0){
+              ss += "[청년 일자리]";
+              check=1;
+            }
+            if(i==1){
+              ss += "[육아]";
+              check=1;
+            }
+            if(i==2){
+              ss += "[여성]";
+              check=1;
+            }
+            if(i==3){
+              ss += "[노인]";
+              check=1;
+            }
+            if(i==4){
+              ss += "[국방]";
+              check=1;
+            }
+            if(i==5){
+              ss += "[환경]";
+              check=1;
+            }
+            if(i==6){
+              ss += "[기타]";
+              check=1;
+            }
+            /*
+            if(i==5){
+              ss += "[정치(정치구조)]";
+              check=1;
+            }
+            */
+          }
+        }
+
+        if(check==0){
+          pp.action = "./index2.html";
+          pp.submit();
+        }
+
+        else if(check==1){
+          ss += "를 체크하지 않으셨습니다."
+          alert(ss);
+          return false;
+        }
+}
+
+  function m_bf0(){
+    $('#intro').fadeIn(2000);
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "0%";
+    window.scrollTo(0,0);
+  }
+
+
+  function m_bf1(){
+    $('#intro').fadeOut();
+    $('#1').fadeIn(2000);
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "0%";
+    window.scrollTo(0,0);
+  }
+
+  function m_bf2(){
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeIn(2000);
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "14%";
+    window.scrollTo(0,0);
+  }
+
+  function m_bf3(){
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeIn(2000);
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "28%";
+    window.scrollTo(0,0);
+  }
+
+  function m_bf4(){
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeIn(2000);
+    $('#5').fadeOut();
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "42%";
+    window.scrollTo(0,0);
+  }
+
+  function m_bf5(){
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeIn(2000);
+    $('#6').fadeOut();
+    $('#7').fadeOut();
+    ele.style.width = "56%";
+    window.scrollTo(0,0);
+  }
+
+  function m_bf6(){
+    $('#intro').fadeOut();
+    $('#1').fadeOut();
+    $('#2').fadeOut();
+    $('#3').fadeOut();
+    $('#4').fadeOut();
+    $('#5').fadeOut();
+    $('#6').fadeIn(2000);
+    $('#7').fadeOut();
+    ele.style.width = "70%";
+    window.scrollTo(0,0);
+  }
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="share" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Page Share</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <a href="javascript:sharefacebook('http://www.presidentshow.net')">
+      <img src="../../static/img/facebookimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;"></span>
+  </a>
+  <br><br>
+
+  <a href="javascript:sharetwitter('http://www.presidentshow.net')">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;">
+      </span>
+  </a>
+  <br><br>
+
+  <a id="kakao-link-btn" href="javascript:;">
+<img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" style="width: 33px; height: 33px;"/>
+</a>
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('b293bb45b587680eb54be656cd55b62b');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createCustomButton({
+      container: '#kakao-link-btn',
+      templateId: 3262,
+      templateArgs: {
+        '${title}': '대통령쇼',
+        '${description}': '내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.'
+      }
+    });
+  //]]>
+</script>
+  <br><br>
+    </div>
+    <div class="modal-footer">
+      결과는 공유되지 않습니다.    
+    </div>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod2 = document.getElementById('share');
+
+  // Get the button that opens the modal
+  var bt2 = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa2 = document.getElementsByClassName("close")[2];
+
+  // When the user clicks the button, open the modal 
+  bt2.onclick = function() {
+      mod2.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa2.onclick = function() {
+      mod2.style.display = "none";
+  }
+</script>
+<script type="text/javascript">
+  // Get the modal
+  var mod = document.getElementById('cart');
+
+  // Get the button that opens the modal
+  var bt = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa = document.getElementsByClassName("close")[1];
+
+  // When the user clicks the button, open the modal 
+  bt.onclick = function() {
+      mod.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa.onclick = function() {
+      mod.style.display = "none";
+      document.getElementById("cart_bt").src = "../../static/img/cart_icon2.jpg";
+  }
+</script>
+
+<div id="share" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <span style="color:white; font-size: 20px;"><b>Share</b></span>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <a href="javascript:sharefacebook('http://www.presidentshow.net')">
+      <img src="../../static/img/facebookimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;"></span>
+  </a>
+  <br><br>
+
+  <a href="javascript:sharetwitter('http://www.presidentshow.net')">
+      <img src="../../static/img/twitterimg.png" style="width: 33px; height: 33px;"><span style="color:#000000;">
+      </span>
+  </a>
+  <br><br>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  // Get the modal
+  var mod2 = document.getElementById('share');
+
+  // Get the button that opens the modal
+  var bt2 = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var spa2 = document.getElementsByClassName("close")[2];
+
+  // When the user clicks the button, open the modal 
+  bt2.onclick = function() {
+      mod2.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spa2.onclick = function() {
+      mod2.style.display = "none";
+  }
+</script>
+
+<script type="text/javascript">
+  $(window).scroll(function () {
+      var height = $(document).scrollTop();
+      log(height);
+      
+  });
+
+  function log(str){
+      $('#log').text(str);
+      var a = str*1;
+      /*
+      var element = document.getElementsByClassName("button");
+      var ele = document.getElementsByClassName("w3-hover-white");
+      if(a<258){
+        for(var i=0;i<element.length;i++){
+          element[i].style.backgroundColor = "#FFBB00";
+        }
+      }
+      else if(a < 1120){
+        element[0].style.backgroundColor = "white";
+        element[1].style.backgroundColor = "#FFBB00";
+        element[2].style.backgroundColor = "#FFBB00";
+        element[3].style.backgroundColor = "#FFBB00";
+        element[4].style.backgroundColor = "#FFBB00";
+        element[5].style.backgroundColor = "#FFBB00";
+        ele[0].style.backgroundColor = "white";
+      }
+      else if(a < 1982){
+        element[0].style.backgroundColor = "#FFBB00";
+        element[1].style.backgroundColor = "white";
+        element[2].style.backgroundColor = "#FFBB00";
+        element[3].style.backgroundColor = "#FFBB00";
+        element[4].style.backgroundColor = "#FFBB00";
+        element[5].style.backgroundColor = "#FFBB00";
+      }
+      else if(a < 2845){
+        element[0].style.backgroundColor = "#FFBB00";
+        element[1].style.backgroundColor = "#FFBB00";
+        element[2].style.backgroundColor = "white";
+        element[3].style.backgroundColor = "#FFBB00";
+        element[4].style.backgroundColor = "#FFBB00";
+        element[5].style.backgroundColor = "#FFBB00";
+      }
+      else if(a < 4015){
+        element[0].style.backgroundColor = "#FFBB00";
+        element[1].style.backgroundColor = "#FFBB00";
+        element[2].style.backgroundColor = "#FFBB00";
+        element[3].style.backgroundColor = "white";
+        element[4].style.backgroundColor = "#FFBB00";
+        element[5].style.backgroundColor = "#FFBB00";
+      }
+      else if(a < 4400){
+        element[0].style.backgroundColor = "#FFBB00";
+        element[1].style.backgroundColor = "#FFBB00";
+        element[2].style.backgroundColor = "#FFBB00";
+        element[3].style.backgroundColor = "#FFBB00";
+        element[4].style.backgroundColor = "white";
+        element[5].style.backgroundColor = "#FFBB00";
+      }
+      else{
+        element[0].style.backgroundColor = "#FFBB00";
+        element[1].style.backgroundColor = "#FFBB00";
+        element[2].style.backgroundColor = "#FFBB00";
+        element[3].style.backgroundColor = "#FFBB00";
+        element[4].style.backgroundColor = "#FFBB00";
+        element[5].style.backgroundColor = "white";
+      }
+      */
+  }
+</script>
+
+<script>
+// Script to open and close sidenav
+function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+<script type="text/javascript">
+(function(w, d, a){
+  w.__beusablerumclient__ = {
+    load : function(src){
+      var b = d.createElement("script");
+      b.src = src; b.async=true; b.type = "text/javascript";
+      d.getElementsByTagName("head")[0].appendChild(b);
+    }
+  };w.__beusablerumclient__.load(a);
+})(window, document, '//rum.beusable.net/script/b170425e191310u258/15b2425d50');
+</script>
+
+</body>
+</html>

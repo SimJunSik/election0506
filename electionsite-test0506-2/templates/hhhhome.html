@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<title>대통령쇼</title>
+<head>
+<meta name="naver-site-verification" content="ef90acbd8bc37b3e4d5f2aad388a66e9dd536057"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="대통령쇼">
+<meta property="og:description" content="내게 맞는 정책을 선택해서 최적의 후보를 찾아보세요.">
+<meta property="og:image" content="http://www.presidentshow.net/static/img/first_page.PNG">
+<meta property="og:url" content="http://www.presidentshow.net">
+
+
+<link rel="canonical" href="http://www.presidentshow.net">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
+<link rel="image_src" href="http://www.presidentshow.net/static/img/first_page.PNG"/>
+<style>
+@media(min-width:500px){
+  body,h1,h2,h3,h4,h5 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+  .hd{ font-size: 60px; } .bb{font-size: 100px;}
+#time{font-size: 50px;}
+#w{border : solid 2px white; background-color: rgba( 255, 255, 255, 0.0 ); color: white; width:170px; height:60px; 
+  padding-bottom:  auto; padding-top: 1.4%; margin-bottom: auto; margin-top: 500%;text-align: center;}
+  #ww{ font-size:43px; }
+  .ccc{
+    margin-top: 3%;
+  }
+
+}
+
+@media(max-width:499px){
+  .ccc{
+    margin-top: -0%;
+  }
+   body,h1,h2,h3,h4,h5 {font-family: "Lato", sans-serif}
+  
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+  .hd{ font-size: 60px; } .bb{font-size: 100px;}
+.fa-anchor,.fa-coffee {font-size:100px}
+#time{font-size: 25px;}
+#w{
+  border : solid 2px white; background-color: rgba( 255, 255, 255, 0.0 ); color: white; width:150px; height:50px; 
+  padding-bottom:  auto; padding-top: auto; margin-bottom: auto; margin-top: auto;
+}
+}
+@media(min-width:451px){
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    h6 {font-family: 'Hanna'; font-size: 100px;}
+  }
+@media(max-width:450px){
+  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    h6 {font-family: 'Hanna'; font-size: 50px;}
+  }
+</style>
+<style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    h6 {font-family: 'Hanna'; font-size: 100px;}
+</style>
+<SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT"> 
+<!-- 
+expireDate = new Date 
+expireDate.setMonth(expireDate.getMonth()+6) 
+hitCt = eval(cookieVal("pageHit")) 
+hitCt++ 
+document.cookie = "pageHit="+hitCt+";expires=" + expireDate.toGMTString() 
+
+function cookieVal(cookieName) { 
+thiscookie = document.cookie.split("; ") 
+for (i=0; i<thiscookie.length; i++) { 
+if (cookieName == thiscookie[i].split("=")[0]) { 
+return thiscookie[i].split("=")[1] 
+} 
+} 
+return 0 
+} 
+
+// --> 
+</SCRIPT>
+<script language="JavaScript">
+function time(){
+  var now = new Date();
+  var then = new Date("may 9,2017");
+  var gap = then.getTime() - now.getTime();
+  gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+  document.getElementById("time").value += gap;
+}
+</script>
+<style type="text/css">
+  @media(max-width: 500px){
+    #f_h{
+      /*background-image: url(../static/img/bgbg4.jpg);*/
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      width: 100%; 
+      height: 65%;
+      line-height: 80%;
+    }
+    #bd{
+      background-image: url(../static/img/bg_2.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      text-align: center;
+    }
+  }
+
+
+  @media(min-width: 501px){
+    #f_h{
+      width: 100%; 
+      height: 65%;
+      /*background-image: url(../static/img/bgbg3.png);*/
+      background-size: 100% 100%;
+      line-height: 110%;
+    }
+    #bd{
+      width: 100%; 
+      height: 65%;
+      background-image: url(../static/img/bg_2.png);
+      background-size: 100% 100%;
+      line-height: 110%;
+      text-align: center;
+    }
+  }
+</style>
+<style type="text/css">
+  @media(min-width: 501px){
+    hr{
+      color: white; 
+      width: 60%;
+    }
+    .hd{
+      width: 80%; height: 10%;
+    }
+    #hdd{
+      margin-top: 120px;
+    }
+    #f{
+      font-size: 70px;
+      line-height: 110%;
+    }
+    #ccm{
+      font-size: 30px;
+      line-height: 110%;
+    }
+    #cmm{
+      font-size: 30px;
+      line-height: 110%;
+    }
+    #abc{
+      font-size: 35px;
+      line-height: 140%;
+    
+    }
+  }
+  @media(max-width: 500px){
+    hr{
+      color: white; 
+      width: 60%;
+    }
+    #hdd{
+      margin-top: 80px;
+    }
+    .hd{
+      width: 190px; height: 220px;
+    }
+    #f{
+      font-size: 40px;
+      line-height: 80%;
+      padding-top: 20px;
+      padding-bottom:20px;
+    }
+    #ccm{
+      font-size: 10px;
+      line-height: 430%;
+    }
+    #cmm{
+      font-size: 15px;
+      line-height: 430%;
+    }
+    #abc{
+      margin-top:25px;
+      font-size: 150%;
+      line-height: 160%;
+      letter-spacing: 50%;
+    }
+    #smgch{
+      font-size: 80%;
+    }
+  }
+</style>
+<script>
+  <!--
+  expireDate = new Date; // 새로운 날짜객체생성
+  expireDate.setMonth(expireDate.getMonth()+6) //쿠키를 6개월간 유지
+  jcount = eval(cookieVal("jasko"))
+  jcount++
+  document.cookie = "jasko="+jcount+";expires=" + expireDate.toGMTString()
+
+  function cookieVal(cookieName) {
+          thisCookie = document.cookie.split("; ")
+          for (i=0; i<thisCookie.length; i++){
+                          if (cookieName == thisCookie[i].split("=")[0]){
+                                          return thisCookie[i].split("=")[1]
+                          }
+          }
+          return 0
+  }
+
+  function page_counter(){
+          for (i=0;i<(7-jcount.toString().length);i++)
+          document.write('<span class="counter">0</span>')
+          for (y=0;y<(jcount.toString().length);y++)
+          document.write('<span class="counter">'+jcount.toString().charAt(y)+'</span>')
+  }
+  //-->
+</script>
+<style type="text/css">
+
+    @media(max-width: 500px){
+    .strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+    }
+
+    .strike > span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .strike > span:before,
+    .strike > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 70%;
+        height: 1px;
+        background: white;
+    }
+
+    .strike > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+
+
+
+    .strike2 {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+    }
+
+    .strike2 > span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .strike2 > span:before,
+    .strike2 > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 270%;
+        height: 1px;
+        background: white;
+    }
+
+    .strike2 > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike2 > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+  }
+
+  @media(min-width: 501px){
+    .strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+    }
+
+    .strike > span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .strike > span:before,
+    .strike > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 80%;
+        height: 1px;
+        background: white;
+    }
+
+    .strike > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+
+
+
+
+
+    .strike2 {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+    }
+
+    .strike2 > span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .strike2 > span:before,
+    .strike2 > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 180%;
+        height: 1px;
+        background: white;
+    }
+
+    .strike2 > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike2 > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+  }
+</style>
+</head>
+
+<body bgproperties="fixed" oncontextmenu="return false" ondragstart="return false" oneselectstart="return false" onload="time();" id="bd">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97823531-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Navbar -->
+
+
+<!-- Header -->
+<!--
+<header class="" bgproperties="fixed" oncontextmenu="return false" ondragstart="return false" oneselectstart="return false" id="f_h" style=" background-color: #DEDEDE; text-align: center; margin-left: auto; margin-right: auto; padding-left: auto; padding-right: auto; padding-top: auto; padding-bottom: auto; margin-top: auto; margin-bottom: auto;">
+</header>
+-->
+        <br/>
+        <!--
+        <h6 class="hd" style="border: 5px solid; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto;">
+        <div id="hdd" style="">
+            <span id="f">나만의</span>
+            <span id="ccm">대선후보</span>
+            <span id="f">찾기</span>
+
+        </div>
+        </h6>
+        -->
+        <!--
+        <div id="hdd" style="">
+            <span id="cmm" style="color : white; " >─────── <span id="smgch" style="font-family: 'Clicker Script', cursive;">Created by shimiggeutchang</span> ───────<br/></span>
+            <span id="f" style="color : white; ">Show my President<br/></span>
+            <span id="ccm" style="color : white; ">───────────&nbsp;  <span>2017.5.9.</span>  &nbsp;───────────</span>
+        </div>
+        --><div class="ccc">
+        <div class="strike">
+           <span id="cmm" style="font-family: 'Clicker Script', cursive; color: white;">Created by shimiggeutchang</span>
+        </div>
+        <span id="f" style="color : white; ">Show my President<br/></span>
+        <div class="strike2">
+           <span id="ccm" style="color : white; ">&nbsp;  <span>2017.5.9.</span>  &nbsp;</span>
+        </div>
+        
+        <div id="hdd" style="" class="eee">
+            <span id="abc" style="color : white;">내게 맞는 정책을 선택해서<br/></span>
+            <span id="abc" style="color : white;">최적의 후보를 찾아보세요.</span>
+        </div>
+        <br/><br/><br/><br/>
+        </div>
+        <!--
+        <input type="button" id="time" value="D-DAY : " style="background-color: #CDDC39; border: 0px; color: black;">
+        -->
+
+  <!--
+  <p class="w3-xlarge">@Created by 시미끝창</p>
+  -->
+  <SCRIPT LANGUAGE=JAVASCRIPT TYPE="TEXT/JAVASCRIPT"> 
+    //document.write("방문자수 : <font color=red>" + hitCt + "</font>")
+
+  </SCRIPT> 
+  <!--
+  <div class="section">
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <h2 class="text-center" contenteditable="false">Step 1</h2>
+                <img src="../static/img/1.png" alt="정책 비교해서 클릭하는 이미지" class="center-block img-responsive" width=170px height=170px>
+                
+                <h3 class="text-center" contenteditable="false">정책을 바탕으로 한 선택으로<br/><br/><br/><br/></h3>
+                <big>
+                  <small></small>
+                </big>
+              </div>
+              <big>
+                <small>
+                  <div class="col-md-4">
+                    <h2 class="text-center" contenteditable="false">Step 2</h2>
+                    <img src="../static/img/2.png" alt="선택된 후보 보여주는 이미지" class="center-block img-responsive" width=170px height=170px>
+                    
+                    <h3 class="text-center" contenteditable="false">나에게 가장 적합한 후보를<br/><br/><br/><br/></h3>
+                  </div>
+                  <big>
+                    <div class="col-md-4">
+                      <h2 class="text-center" contenteditable="false">Step 3</h2>
+                      <img src="../static/img/3.png" alt="연설하는 이미지" class="center-block img-responsive" width=170px height=170px>
+                      
+                      <h3 class="text-center">알아보자!</h3>
+                    </div>
+                  </big>
+                </small>
+                <big></big>
+              </big>
+            </div>
+            <big>
+              <big></big>
+            </big>
+          </div>
+          <big>
+            <big>
+              <small></small>
+            </big>
+          </big>
+        </div>
+
+      </div>
+    </div>
+    -->
+
+  
+
+  <a class="w3-btn w3-padding- w3-xlarge w3-margin-top" href="{% url 'elections:index' %}"  id="w"><b id="ww">Start</b>
+  </a>
+  <br/><br/>
+
+  <span style="color : white;">Visited : {{ count }}</span>
+
+
+
+<!-- First Grid -->
+<!--
+<div class="section">
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <h2 class="text-center" contenteditable="false">Step 1</h2>
+                <img src="../static/img/1.png" alt="정책 비교해서 클릭하는 이미지" class="center-block img-responsive" width=250px height=250px>
+                
+                <h3 class="text-center" contenteditable="false">정책을 바탕으로 한 선택으로<br/><br/><br/><br/></h3>
+                <big>
+                  <small></small>
+                </big>
+              </div>
+              <big>
+                <small>
+                  <div class="col-md-4">
+                    <h2 class="text-center" contenteditable="false">Step 2</h2>
+                    <img src="../static/img/2.png" alt="선택된 후보 보여주는 이미지" class="center-block img-responsive" width=250px height=250px>
+                    
+                    <h3 class="text-center" contenteditable="false">나에게 가장 적합한 후보를<br/><br/><br/><br/></h3>
+                  </div>
+                  <big>
+                    <div class="col-md-4">
+                      <h2 class="text-center" contenteditable="false">Step 3</h2>
+                      <img src="../static/img/3.png" alt="연설하는 이미지" class="center-block img-responsive" width=250px height=250px>
+                      
+                      <h3 class="text-center">알아보자!</h3>
+                    </div>
+                  </big>
+                </small>
+                <big></big>
+              </big>
+            </div>
+            <big>
+              <big></big>
+            </big>
+          </div>
+          <big>
+            <big>
+              <small></small>
+            </big>
+          </big>
+        </div>
+        <big>
+          <big>
+            <small></small>
+          </big>
+        </big>
+      </div>
+    </div>
+-->
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<script type="text/javascript">
+(function(w, d, a){
+  w.__beusablerumclient__ = {
+    load : function(src){
+      var b = d.createElement("script");
+      b.src = src; b.async=true; b.type = "text/javascript";
+      d.getElementsByTagName("head")[0].appendChild(b);
+    }
+  };w.__beusablerumclient__.load(a);
+})(window, document, '//rum.beusable.net/script/b170425e191310u258/15b2425d50');
+</script>
+</body>
+</html>
